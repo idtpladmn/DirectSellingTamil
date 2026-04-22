@@ -1,0 +1,138 @@
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    background-color: #0b0b0b;
+}
+
+.App {
+    min-height: 100vh;
+    background-color: #0b0b0b;
+}
+
+/* Font helpers used across the landing page */
+.font-\[Outfit\] {
+    font-family:
+        "Outfit",
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        sans-serif;
+}
+
+.font-\[Manrope\] {
+    font-family:
+        "Manrope",
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        sans-serif;
+}
+
+.font-\[\'Noto_Sans_Tamil\'\] {
+    font-family: "Noto Sans Tamil", "Manrope", sans-serif;
+}
+
+/* Selection highlight */
+::selection {
+    background: #ffd700;
+    color: #0b0b0b;
+}
+
+/* ---------------- PRINT STYLES ---------------- */
+@media print {
+    /* Preserve dark bg + gold accents (Chromium/Safari/Firefox) */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    html,
+    body {
+        background: #0b0b0b !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Hide floating + platform chrome */
+    [data-testid="whatsapp-fab"],
+    #emergent-badge,
+    a[id="emergent-badge"] {
+        display: none !important;
+    }
+
+    /* Disable entrance animations so every section is visible on paper */
+    * {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Force framer-motion-hidden content to render */
+    [style*="opacity: 0"],
+    [style*="opacity:0"] {
+        opacity: 1 !important;
+    }
+
+    /* Avoid awkward breaks inside sections, cards, and buttons */
+    section,
+    button,
+    img,
+    [data-testid^="pain-point-"],
+    [data-testid^="solution-card-"] {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Start major sections on a new page for a clean print deck */
+    section {
+        break-before: page;
+        page-break-before: always;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* First section shouldn't force a blank first page */
+    section:first-of-type {
+        break-before: auto;
+        page-break-before: auto;
+    }
+
+    /* Tame glows and heavy shadows for paper */
+    * {
+        box-shadow: none !important;
+        filter: none !important;
+    }
+
+    /* Ensure images print crisp */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Progress bar fills render even without scroll trigger */
+    [data-testid^="pain-point-"] .h-full {
+        width: var(--print-width, 100%) !important;
+    }
+
+    /* Hide any video play ping animation artifacts */
+    .animate-ping {
+        display: none !important;
+    }
+
+    /* Slightly larger body text for readability on print */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+}
+
+/* Page margin setup */
+@page {
+    size: A4;
+    margin: 10mm;
+}
