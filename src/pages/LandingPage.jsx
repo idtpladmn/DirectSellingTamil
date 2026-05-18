@@ -648,7 +648,7 @@ const FinalCTASection = () => (
       >
         <button
           data-testid="final-cta-button"
-          onClick={() => window.open("https://wa.me/910000000000", "_blank")}
+          onClick={() => window.open("https://tagmango.com/web/checkout/6a0afa574e0bbdd136e1d412", "_blank")}
           className="group inline-flex items-center justify-center gap-3 bg-[#FFD700] text-black font-bold text-lg sm:text-2xl tracking-wide py-5 px-12 md:py-6 md:px-16 rounded-xl shadow-[0_0_50px_rgba(255,215,0,0.4)] hover:shadow-[0_0_80px_rgba(255,215,0,0.7)] hover:-translate-y-1 transition-all duration-300"
         >
           Join Now
@@ -665,7 +665,7 @@ const FinalCTASection = () => (
 /* ---------------- STICKY WHATSAPP ---------------- */
 const StickyWhatsApp = () => (
   <a
-    href="https://wa.me/910000000000"
+    href="https://tagmango.com/web/checkout/6a0afa574e0bbdd136e1d412"
     target="_blank"
     rel="noopener noreferrer"
     data-testid="whatsapp-fab"
