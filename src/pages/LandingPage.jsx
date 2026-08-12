@@ -128,14 +128,14 @@ const VideoSection = () => (
         {...fadeUp}
         className="font-[Outfit] font-extrabold text-white text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1]"
       >
-        Watch This <span className="text-[#FFD700]">Before You Continue</span>
+        தொடர்வதற்கு முன் <span className="text-[#FFD700]">இதைப் பாருங்கள்</span>
       </motion.h2>
       <motion.p
         {...fadeUp}
         transition={{ ...fadeUp.transition, delay: 0.1 }}
         className="mt-6 text-neutral-400 font-[Manrope] text-lg sm:text-xl"
       >
-        A 3-minute message that could change the next 5 years of your life.
+        நேரடி வணிகத்தில் ஈடுபடுவோருக்கான 3 நிமிடச் சிறப்புச் செய்தி
       </motion.p>
 
       <motion.div
