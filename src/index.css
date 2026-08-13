@@ -88,3 +88,62 @@ code {
   border-top-color: inherit;
   border-bottom-color: inherit;
 }
+/* ================================
+   RESPONSIVE LAYOUT FIX
+   ================================ */
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+main[data-testid="landing-page"] {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+/* Keep every section inside the viewport */
+main[data-testid="landing-page"] section {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Prevent large text from creating horizontal overflow */
+main[data-testid="landing-page"] h1,
+main[data-testid="landing-page"] h2,
+main[data-testid="landing-page"] h3,
+main[data-testid="landing-page"] p {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Mobile safety */
+@media (max-width: 640px) {
+  main[data-testid="landing-page"] {
+    overflow-x: hidden;
+  }
+
+  main[data-testid="landing-page"] h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  main[data-testid="landing-page"] h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+}
