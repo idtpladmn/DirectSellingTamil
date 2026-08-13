@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
+  darkMode: ["class"],
 
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -58,6 +58,22 @@ module.exports = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
 
+        /* IDTPL / Direct Selling brand colors */
+        gold: {
+          DEFAULT: "#FFD700",
+          light: "#FFE44D",
+          dark: "#D4AF00",
+        },
+
+        brand: {
+          black: "#0B0B0B",
+          dark: "#111111",
+          card: "#141414",
+          gold: "#FFD700",
+          red: "#E63946",
+          white: "#FFFFFF",
+        },
+
         chart: {
           1: "hsl(var(--chart-1))",
           2: "hsl(var(--chart-2))",
@@ -85,14 +101,32 @@ module.exports = {
             height: "0",
           },
         },
+
+        "gold-pulse": {
+          "0%, 100%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "0.75",
+          },
+        },
       },
 
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "gold-pulse": "gold-pulse 2s ease-in-out infinite",
+      },
+
+      boxShadow: {
+        "gold-sm": "0 0 15px rgba(255, 215, 0, 0.12)",
+        "gold-md": "0 0 30px rgba(255, 215, 0, 0.15)",
+        "gold-lg": "0 0 50px rgba(255, 215, 0, 0.12)",
       },
     },
   },
 
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
 };
