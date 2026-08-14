@@ -66,17 +66,23 @@ const HeroSection = () => (
     </div>
     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,215,0,0.05),_transparent_50%)]" />
 
-    <div className="relative max-w-5xl mx-auto px-6 py-28 sm:py-36 md:py-44 text-center">
-      <motion.div {...fadeUp}>
-        <SectionOverline>Exclusive Masterclass for Tamil Direct Sellers</SectionOverline>
-      </motion.div>
+        <div className="relative max-w-5xl mx-auto px-6 py-28 sm:py-36 md:py-44 text-center">
+            <motion.div {...fadeUp} className="flex items-center justify-center gap-3">
+                <span className="h-px w-9 bg-[#FFD700]" />
+
+                <span className="font-[Manrope] font-semibold uppercase tracking-[0.25em] text-[#FFD700] text-lg sm:text-xl lg:text-2xl">
+                    TAMIL DIRECT SELLING ACADEMY
+                </span>
+
+                <span className="h-px w-9 bg-[#FFD700]" />
+            </motion.div>
 
       <motion.h1
         {...fadeUp}
         transition={{ ...fadeUp.transition, delay: 0.1 }}
         className="font-[Outfit] font-extrabold tracking-tight text-white text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.05]"
       >
-        I’m on a Mission to Help{" "}
+                We’re  on a Mission to Help{" "}
         <span className="text-[#FFD700]">1000+ Tamil Direct Sellers</span>{" "}
         Earn Their <span className="text-[#FFD700]">First Crore</span> &amp; Build a{" "}
         <span className="text-[#FFD700]">6-Figure Income in Direct Selling Industry</span>
@@ -110,7 +116,7 @@ const HeroSection = () => (
         <PrimaryCTA testId="hero-cta-button">Join Now</PrimaryCTA>
         <p className="text-sm sm:text-base text-neutral-500 font-[Manrope] flex items-center gap-2">
           <ShieldCheck className="h-4 w-4 text-[#FFD700]/70" />
-          Trusted by 500+ direct sellers across Tamil Nadu
+       
         </p>
       </motion.div>
     </div>
@@ -124,19 +130,39 @@ const VideoSection = () => (
     className="bg-[#141414] py-24 md:py-36 border-t border-white/5"
   >
     <div className="max-w-4xl mx-auto px-6 text-center">
-      <motion.h2
-        {...fadeUp}
-        className="font-[Outfit] font-extrabold text-white text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1]"
-      >
-        Watch This <span className="text-[#FFD700]">Before You Continue</span>
-      </motion.h2>
-      <motion.p
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.1 }}
-        className="mt-6 text-neutral-400 font-[Manrope] text-lg sm:text-xl"
-      >
-        A 3-minute message that could change the next 5 years of your life.
-      </motion.p>
+            <motion.h2
+                {...fadeUp}
+                className="font-[Outfit] font-extrabold text-white text-center tracking-tight leading-none px-2"
+            >
+                {/* English — always one line */}
+                <span className="block whitespace-nowrap text-[20px] sm:text-3xl md:text-5xl lg:text-6xl">
+                    Watch This{" "}
+                    <span className="text-[#FFD700]">
+                        Before You Continue
+                    </span>
+                </span>
+
+                {/* Tamil — always one line */}
+                <span className="block whitespace-nowrap mt-2 sm:mt-3 text-[13px] sm:text-xl md:text-2xl lg:text-4xl">
+                    தொடர்வதற்கு முன்{" "}
+                    <span className="text-[#FFD700]">
+                        இதைப் பாருங்கள்
+                    </span>
+                </span>
+            </motion.h2>
+            <motion.p
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.1 }}
+                className="mt-5 text-neutral-400 font-[Manrope] text-center px-2"
+            >
+                <span className="block whitespace-nowrap text-[11px] sm:text-base md:text-lg lg:text-xl">
+                    A 3-Minute Message for All Those Involved in the Direct Selling Industry in Tamil Nadu
+                </span>
+
+                <span className="block whitespace-nowrap mt-1.5 text-[9px] sm:text-sm md:text-base lg:text-lg">
+                    தமிழ்நாட்டில் நேரடி வணிகத்தில் ஈடுபடுவோருக்கான 3 நிமிடச் சிறப்புச் செய்தி
+                </span>
+            </motion.p>
 
       <motion.div
         {...fadeUp}
@@ -188,24 +214,63 @@ const CorePromiseSection = () => (
       <motion.div {...fadeUp}>
         <SectionOverline tone="dark">The Core Promise</SectionOverline>
       </motion.div>
-      <motion.h2
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.1 }}
-        className="font-[Outfit] font-extrabold text-[#0B0B0B] text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1]"
-      >
-        Build a Successful Direct Selling Business With the{" "}
-        <span className="underline decoration-[#FFD700] decoration-4 underline-offset-4">
-          Right Skills
-        </span>
-        , a{" "}
-        <span className="underline decoration-[#FFD700] decoration-4 underline-offset-4">
-          Proven System
-        </span>
-        , and a{" "}
-        <span className="underline decoration-[#FFD700] decoration-4 underline-offset-4">
-          Strong Team
-        </span>
-      </motion.h2>
+            <motion.h2
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.1 }}
+                className="mx-auto w-full max-w-[1450px] font-[Outfit] font-extrabold text-[#0B0B0B] text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl tracking-tight leading-[1.1] text-center px-4"
+            >
+               
+                {/* English Heading */}
+                <span className="block">
+                    Build a Successful
+                </span>
+
+                <span className="block">
+                    Direct Selling Business Using
+                </span>
+
+                <span className="block">
+                    <span className="underline decoration-[#FFD700] decoration-4 underline-offset-4">
+                        New-Age Methods
+                    </span>
+                    ,
+                </span>
+
+                <span className="block">
+                    a {" "}
+                    <span className="underline decoration-[#FFD700] decoration-4 underline-offset-4">
+                        Fast Lane System
+                    </span>
+                    ,
+                </span>
+
+                <span className="block lg:whitespace-nowrap">
+                    and the{" "}
+                    <span className="underline decoration-[#FFD700] decoration-4 underline-offset-4">
+                        2D CopyCat Framework
+                    </span>
+                </span>
+              
+                
+
+                {/* Tamil Translation */}
+                <span
+                    className="
+      block
+      mt-5 sm:mt-6
+      font-[Manrope]
+      font-medium
+      text-neutral-500
+      text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl
+      leading-[1.4]
+    "
+                >
+                    நவீன யுக முறைகளையும், விரைவுப் பாதை அமைப்பு
+                    முறையையும், 2D பிரதியெடுக்கக்கூடிய
+                    முறையையும் பயன்படுத்தி வெற்றிகரமான
+                    நேரடி வணிகத்தை கட்டமைங்கள்.
+                </span>
+            </motion.h2>
       <motion.p
         {...fadeUp}
         transition={{ ...fadeUp.transition, delay: 0.2 }}
@@ -213,140 +278,348 @@ const CorePromiseSection = () => (
       >
         So you can leave your 9 to 5 when you’re ready.
       </motion.p>
-      <motion.p
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.3 }}
-        className="mt-4 text-neutral-500 italic font-['Noto_Sans_Tamil'] text-lg sm:text-xl leading-relaxed"
-      >
-        சரியான திறமை, நிரூபிக்கப்பட்ட சிஸ்டம் மற்றும் வலுவான டீமுடன் வெற்றிகரமான டைரக்ட் செல்லிங் வணிகத்தை உருவாக்குங்கள்.
-      </motion.p>
+    
 
-      <motion.div
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.4 }}
-        className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6"
-      >
-        {[
-          { icon: Sparkles, title: "Right Skills", desc: "Communication, closing, prospecting" },
-          { icon: Target, title: "Proven System", desc: "Step-by-step funnel framework" },
-          { icon: Users, title: "Strong Team", desc: "Duplicatable leadership blueprint" },
-        ].map((item) => (
-          <div
-            key={item.title}
-            className="bg-white border border-black/5 rounded-2xl p-8 text-left hover:shadow-xl hover:-translate-y-1 transition-all"
-          >
-            <div className="h-14 w-14 rounded-xl bg-[#0B0B0B] flex items-center justify-center mb-6">
-              <item.icon className="h-6 w-6 text-[#FFD700]" />
-            </div>
-            <h3 className="font-[Outfit] font-bold text-[#0B0B0B] text-xl sm:text-2xl">{item.title}</h3>
-            <p className="text-neutral-600 font-[Manrope] text-base sm:text-lg mt-2 leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </motion.div>
+            <motion.div
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.4 }}
+                className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6"
+            >
+                {[
+                    {
+                        icon: Sparkles,
+                        title: "New-Age Methods",
+                        desc: "Communication, closing, prospecting",
+                    },
+                    {
+                        icon: Target,
+                        title: "Fast Lane System",
+                        desc: "Step-by-step funnel framework",
+                    },
+                    {
+                        icon: Users,
+                        title: "2D CopyCat Framework",
+                        desc: "Duplicatable leadership blueprint",
+                    },
+                ].map((item) => (
+                    <div
+                        key={item.title}
+                        className="bg-white border border-black/5 rounded-2xl p-6 sm:p-7 lg:p-8 text-left hover:shadow-xl hover:-translate-y-1 transition-all"
+                    >
+                        {/* Icon */}
+                        <div className="h-14 w-14 rounded-xl bg-[#0B0B0B] flex items-center justify-center mb-5 sm:mb-6">
+                            <item.icon className="h-6 w-6 text-[#FFD700]" />
+                        </div>
+
+                        {/* Heading */}
+                        <h3
+                            className="
+          font-[Outfit]
+          font-bold
+          text-[#0B0B0B]
+          text-xl
+          sm:text-xl
+          lg:text-2xl
+          leading-tight
+          lg:whitespace-nowrap
+        "
+                        >
+                            {item.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p
+                            className="
+          text-neutral-600
+          font-[Manrope]
+          text-base
+          sm:text-lg
+          mt-2
+          leading-relaxed
+        "
+                        >
+                            {item.desc}
+                        </p>
+                    </div>
+                ))}
+            </motion.div>
     </div>
   </section>
 );
 
 /* ---------------- 4. PROBLEM ---------------- */
 const ProblemSection = () => (
-  <section
-    data-testid="problem-section"
-    className="bg-[#0B0B0B] py-24 md:py-32 relative overflow-hidden"
-  >
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(230,57,70,0.12),_transparent_60%)]" />
-    <div className="relative max-w-4xl mx-auto px-5 text-center">
-      <motion.div {...fadeUp}>
-        <AlertTriangle className="h-12 w-12 text-[#E63946] mx-auto mb-6" />
-      </motion.div>
-      <motion.h2
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.1 }}
-        className="font-[Outfit] font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15]"
-      >
-        Let me be brutally honest with you...
-      </motion.h2>
-      <motion.p
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.2 }}
-        className="mt-8 font-[Outfit] text-white text-2xl sm:text-3xl lg:text-4xl font-bold"
-      >
-        Most direct sellers aren’t failing because of a bad product.
-      </motion.p>
-      <motion.p
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.3 }}
-        className="mt-4 font-[Outfit] text-neutral-300 text-xl sm:text-2xl font-medium"
-      >
-        They’re failing because of{" "}
-        <span className="relative inline-block font-extrabold text-[#E63946]">
-          MENTAL OVERLOAD
-          <span className="absolute left-0 right-0 -bottom-1 h-[3px] bg-[#E63946]/80" />
-        </span>
-        .
-      </motion.p>
-    </div>
-  </section>
-);
+    <section
+        data-testid="problem-section"
+        className="bg-[#0B0B0B] py-24 md:py-32 relative overflow-hidden"
+    >
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(230,57,70,0.12),_transparent_60%)]" />
 
+        <div className="relative max-w-4xl mx-auto px-5 text-center">
+
+            <motion.div {...fadeUp}>
+                <AlertTriangle className="h-12 w-12 text-[#E63946] mx-auto mb-6" />
+            </motion.div>
+
+            <motion.h2
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.1 }}
+                className="font-[Outfit] font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15]"
+            >
+                Let me be brutally honest with you...
+            </motion.h2>
+
+            <motion.p
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.2 }}
+                className="mt-8 font-[Outfit] text-white text-2xl sm:text-3xl lg:text-4xl font-bold"
+            >
+                Most direct sellers aren’t failing <br />
+                because of their product or plan.
+            </motion.p>
+
+            <motion.p
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.3 }}
+                className="mt-4 font-[Outfit] text-neutral-300 text-xl sm:text-2xl font-medium"
+            >
+                They’re failing because of{" "}
+                <span className="relative inline-block whitespace-nowrap font-extrabold text-[#E63946]">
+                    MENTAL OVERLOAD
+                    <span className="absolute left-0 right-0 -bottom-1 h-[3px] bg-[#E63946]/80" />
+                </span>
+                .
+            </motion.p>
+
+        </div>
+    </section>
+);
 /* ---------------- 5. PAIN POINTS ---------------- */
-const painPoints = [
-  { label: "Monthly Income Pressure", value: 90 },
-  { label: "Finding New People", value: 70 },
-  { label: "Inactive Team", value: 75 },
-  { label: "Team Members Quitting", value: 80 },
-  { label: "Prospect Rejection", value: 70 },
-  { label: "Sales Closing Problems", value: 95 },
-  { label: "Social Media No Results", value: 90 },
+
+const detailedPainPoints = [
+    {
+        title: "Monthly Income Pressure",
+        tamilTitle: "மாதாந்திர வருமான அழுத்தம்",
+        description:
+            "ஒரு மாதம் வருமானம் வந்தாலும், அடுத்த மாதத்திற்கான income-ஐ மீண்டும் புதிதாக உருவாக்க வேண்டிய அழுத்தம்.",
+        graphLabel: "Monthly Income Pressure",
+        value: 90,
+    },
+    {
+        title:
+            "Social Media-வில் தொடர்ந்து Content போடுகிறீர்கள்… ஆனால் Business வரவில்லை",
+        description:
+            "Views, Likes, Followers இருக்கிறது. ஆனால் அவை எதிர்பார்த்த Business Results-ஆக மாறவில்லை.",
+        graphLabel: "Social Media No Results",
+        value: 90,
+    },
+    {
+        title:
+            "சரியான Prospects கிடைக்கவில்லை… கிடைத்த Leads-ல் யார் Qualified என்று தெரியவில்லை",
+        description:
+            "Friends & Family circle குறைந்து வருகிறது. புதிய prospects எங்கே கிடைப்பது, Social Media-வில் வரும் enquiries-ல் யார் Qualified Lead, யார் வெறும் Random Lead என்பதை அடையாளம் கண்டு qualify செய்ய முடியவில்லை.",
+        graphLabel: "Finding New People",
+        value: 80,
+    },
+    {
+        title: "Team Active-ஆக இருக்கிறது… ஆனால் Productive-ஆக இல்லை",
+        description:
+            "Team members செயல்பாட்டில் இருக்கிறார்கள், ஆனால் consistent results உருவாகவில்லை. காலப்போக்கில் சிலர் business-ஐ விட்டு விலகிவிடுகிறார்கள்.",
+        graphLabel: "Inactive Team",
+        value: 85,
+    },
+    {
+        title: "உங்களை மட்டுமே சார்ந்து இயங்கும் வணிகம்",
+        description:
+            "நீங்கள் தொடர்ந்து follow-up செய்தால்தான் sales நடக்கிறது. நீங்கள் motivate செய்யவில்லை என்றால் Team inactive-ஆக மாறுகிறது.No Leverage Income.Only Active Income",
+        highlight: "No Leverage Income. Only Active Income.",
+        graphLabel: "Team Members Quitting",
+        value: 80,
+    },
+    {
+        title: "கற்றுக்கொண்டது அதிகம்… Results மாறவில்லை",
+        description:
+            "Training, webinars, books, videos என்று தொடர்ந்து கற்றுக்கொள்கிறீர்கள். Motivation மட்டுமே கிடைக்கிறது… ஆனால் Business Results மாறுவதில்லை.",
+        graphLabel: "Prospect Rejection",
+        value: 80,
+    },
+    {
+        title: "வேலை செய்கிறீர்கள்… ஆனால் உங்கள் வியாபாரம் விரிவடைகிறதா?",
+        description:
+            "நாள் முழுவதும் busy-ஆக இருக்கிறீர்கள். ஆனால் உங்கள் செயல்பாடுகள் நீண்டகால வணிக வளர்ச்சிக்கான அடித்தளத்தை உருவாக்குகிறதா? உங்கள் Team-ல் Duplication — பிரதியெடுத்தல் நடைபெறுகிறதா?",
+        graphLabel: "Sales Closing Problems",
+        value: 95,
+    },
 ];
 
 const PainPointsSection = () => (
-  <section
-    data-testid="pain-points-section"
-    className="bg-white py-20 md:py-28"
-  >
-    <div className="max-w-4xl mx-auto px-5">
-      <motion.div {...fadeUp} className="text-center">
-        <SectionOverline tone="dark">Do any of these feel familiar?</SectionOverline>
-        <h2 className="font-[Outfit] font-extrabold text-[#0B0B0B] text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.1]">
-          The 7 Pain Points{" "}
-          <span className="text-[#E63946]">Killing Your Business</span>
-        </h2>
-      </motion.div>
+    <section
+        data-testid="pain-points-section"
+        className="bg-white py-20 md:py-28"
+    >
+        <div className="max-w-4xl mx-auto px-5">
 
-      <div className="mt-14 space-y-6">
-        {painPoints.map((p, idx) => (
-          <motion.div
-            key={p.label}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: idx * 0.06 }}
-            viewport={{ once: true, margin: "-80px" }}
-            data-testid={`pain-point-${idx}`}
-          >
-            <div className="flex items-center justify-between mb-2">
-              <span className="font-[Outfit] font-bold text-[#0B0B0B] text-base sm:text-lg">
-                {p.label}
-              </span>
-              <span className="font-[Outfit] font-extrabold text-[#E63946] text-base sm:text-lg tabular-nums">
-                {p.value}%
-              </span>
+            {/* Tamil Heading */}
+            <motion.div
+                {...fadeUp}
+                className="text-center mb-10 sm:mb-12"
+            >
+                <p className="font-[Manrope] text-neutral-500 text-lg sm:text-xl lg:text-2xl leading-relaxed mb-4">
+                    இந்த 7 சவால்களில் எத்தனை உங்களுக்கு இருக்கிறது?
+                </p>
+
+                <h2 className="font-[Outfit] font-extrabold text-[#0B0B0B] text-2xl sm:text-3xl lg:text-4xl leading-tight">
+                    <span className="block">
+                        நேரடி விற்பனையில்,
+                    </span>
+
+                    <span className="block">
+                        உங்கள் வளர்ச்சியைத் தடுத்து நிறுத்தும்
+                    </span>
+
+                    <span className="block text-[#E63946]">
+                        7 முக்கிய சவால்கள்
+                    </span>
+                </h2>
+            </motion.div>
+
+            {/* 7 Pain Point Cards */}
+            <div className="space-y-5 sm:space-y-6">
+                {detailedPainPoints.map((point, idx) => (
+                    <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                            duration: 0.5,
+                            delay: idx * 0.06,
+                        }}
+                        viewport={{
+                            once: true,
+                            margin: "-80px",
+                        }}
+                        className="
+              bg-white
+              border border-black/10
+              rounded-2xl
+              p-5 sm:p-7 lg:p-8
+              shadow-sm
+              hover:shadow-md
+              transition-shadow
+            "
+                    >
+
+                        {/* Number + Title */}
+                        <h3
+                            className="
+                font-[Outfit]
+                font-extrabold
+                text-[#0B0B0B]
+                text-lg sm:text-xl lg:text-2xl
+                leading-snug
+              "
+                        >
+                            <span className="text-[#E63946]">
+                                {idx + 1}.
+                            </span>{" "}
+                            {point.title}
+
+                            {point.tamilTitle && (
+                                <span className="font-[Manrope] font-semibold text-neutral-500">
+                                    {" "}— {point.tamilTitle}
+                                </span>
+                            )}
+                        </h3>
+
+                        {/* Description */}
+                        <p
+                            className="
+                mt-3
+                font-[Manrope]
+                text-neutral-600
+                text-base sm:text-lg
+                leading-relaxed
+              "
+                        >
+                            {point.description}
+                        </p>
+
+                        {/* Highlight */}
+                        {point.highlight && (
+                            <p
+                                className="
+                  mt-4
+                  font-[Outfit]
+                  font-bold
+                  text-[#0f0e0e]
+                  text-base sm:text-lg
+                "
+                            >
+                                {point.highlight}
+                            </p>
+                        )}
+
+                        {/* Graph */}
+                        <div className="mt-6">
+
+                            {/* Graph Heading + Percentage */}
+                            <div className="flex items-center justify-between mb-2">
+                                <span
+                                    className="
+                    font-[Outfit]
+                    font-bold
+                    text-[#0B0B0B]
+                    text-sm sm:text-base
+                  "
+                                >
+                                    {point.graphLabel}
+                                </span>
+
+                                <span
+                                    className="
+                    font-[Outfit]
+                    font-extrabold
+                    text-[#E63946]
+                    text-sm sm:text-base
+                    tabular-nums
+                  "
+                                >
+                                    {point.value}%
+                                </span>
+                            </div>
+
+                            {/* Progress Bar */}
+                            <div className="h-3 w-full bg-black/5 rounded-full overflow-hidden">
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: `${point.value}%` }}
+                                    transition={{
+                                        duration: 1.2,
+                                        ease: "easeOut",
+                                        delay: 0.2 + idx * 0.05,
+                                    }}
+                                    viewport={{
+                                        once: true,
+                                        margin: "-80px",
+                                    }}
+                                    className="
+                    h-full
+                    rounded-full
+                    bg-gradient-to-r
+                    from-[#E63946]
+                    to-[#ff6b73]
+                  "
+                                />
+                            </div>
+
+                        </div>
+                    </motion.div>
+                ))}
             </div>
-            <div className="h-3 w-full bg-black/5 rounded-full overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${p.value}%` }}
-                transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 + idx * 0.05 }}
-                viewport={{ once: true, margin: "-80px" }}
-                className="h-full rounded-full bg-gradient-to-r from-[#E63946] to-[#ff6b73]"
-              />
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </section>
+
+        </div>
+    </section>
 );
-
 /* ---------------- 6. EMOTIONAL ---------------- */
 const EmotionalSection = () => (
   <section
@@ -377,18 +650,18 @@ const SolutionSection = () => {
   const features = [
     {
       icon: Sparkles,
-      title: "Build Skills",
-      desc: "Master prospecting, closing, objection handling, and retention — the 4 pillars every top earner has.",
+          title: "Master New-Age Methods",
+          desc: "புதிய தலைமுறை நேரடி வணிக முறைகளைப் பயன்படுத்தி, இன்றைய Social Media உலகில் உங்கள் வணிகத்தை வளர்க்கும் நடைமுறை முறைகளைக் கற்றுக்கொள்ளுங்கள்.",
     },
     {
       icon: Users,
-      title: "Build Strong Team",
-      desc: "Duplicate yourself with a proven leadership system that turns inactive teams into revenue engines.",
+        title: "Build a Duplicatable Team",
+        desc: "நீங்கள் மட்டுமே செயல்படாமல், உங்கள் Team உங்களைப் பிரதியெடுத்து செயல்படும் வகையில் ஒரு எளிய Leadership Framework-ஐ உருவாக்குங்கள்.",
     },
     {
       icon: TrendingUp,
-      title: "Build Consistent Income",
-      desc: "Switch from one-off luck to predictable monthly income with our plug-and-play funnel framework.",
+        title: "Accelerate Your Growth",
+        desc: "Fast Lane System மூலம், நீங்கள் நினைத்ததைவிட வேகமாக உங்கள் நேரடி வணிக வளர்ச்சியை அடுத்த கட்டத்திற்கு கொண்டு செல்லுங்கள்.",
     },
   ];
   return (
@@ -403,7 +676,8 @@ const SolutionSection = () => {
             Direct Selling <span className="text-[#FFD700] drop-shadow-[0_2px_0_rgba(0,0,0,0.1)]">Tamil Academy</span>
           </h2>
           <p className="mt-4 text-neutral-600 font-[Manrope] text-base sm:text-lg">
-            A skill-first training ecosystem built for Tamil direct sellers — regardless of your company.
+                      அனைத்து நேரடி விற்பனை நிறுவனங்களைச் சேர்ந்த தமிழ் நேரடி விற்பனையாளர்களுக்காக உருவாக்கப்பட்ட
+                      நவீன நடைமுறை கற்றல் அமைப்பு
           </p>
         </motion.div>
 
@@ -438,59 +712,7 @@ const SolutionSection = () => {
   );
 };
 
-/* ---------------- 8. OFFER ---------------- */
-const OfferSection = () => (
-  <section
-    data-testid="offer-section"
-    className="bg-[#141414] py-20 md:py-28 relative overflow-hidden"
-  >
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,215,0,0.1),_transparent_60%)]" />
-    <div className="relative max-w-4xl mx-auto px-5">
-      <motion.div {...fadeUp} className="text-center mb-10">
-        <SectionOverline>Exclusive Offer</SectionOverline>
-        <h2 className="font-[Outfit] font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
-          A Low-Risk Entry, A <span className="text-[#FFD700]">High-Return</span> Path
-        </h2>
-      </motion.div>
 
-      <motion.div
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.2 }}
-        className="relative rounded-3xl bg-gradient-to-br from-[#FFD700] via-[#FFDA1F] to-[#E6C200] p-[2px] shadow-[0_0_80px_rgba(255,215,0,0.25)]"
-      >
-        <div className="rounded-3xl bg-[#FFD700] p-8 md:p-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-black text-[#FFD700] rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase mb-6">
-            <Flame className="h-3.5 w-3.5" /> Limited Offer
-          </div>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6">
-            <div className="flex items-baseline gap-2">
-              <span className="font-[Outfit] font-black text-black text-5xl sm:text-6xl lg:text-7xl">₹49</span>
-              <span className="font-[Manrope] font-semibold text-black/70 text-base sm:text-lg">Landing Page Funnel</span>
-            </div>
-            <ArrowRight className="h-8 w-8 text-black hidden md:block" />
-            <div className="flex items-baseline gap-2">
-              <span className="font-[Outfit] font-black text-black text-4xl sm:text-5xl lg:text-6xl">₹4999</span>
-              <span className="font-[Manrope] font-semibold text-black/70 text-base sm:text-lg">Conversion Model</span>
-            </div>
-          </div>
-          <p className="mt-6 text-black/80 font-[Manrope] text-base sm:text-lg max-w-xl mx-auto">
-            Start with <span className="font-bold">₹49</span>, experience the full system, then unlock the
-            complete blueprint — no guesswork, no fluff.
-          </p>
-          <div className="mt-8">
-            <button
-              onClick={scrollToFinal}
-              data-testid="offer-cta-button"
-              className="inline-flex items-center gap-2 bg-black text-[#FFD700] font-bold text-base sm:text-lg py-4 px-10 rounded-lg hover:scale-105 transition-transform"
-            >
-              Claim My ₹49 Seat <ArrowRight className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  </section>
-);
 
 /* ---------------- 9. AUTHORITY ---------------- */
 const AuthoritySection = () => (
@@ -502,13 +724,11 @@ const AuthoritySection = () => (
       <motion.div {...fadeUp} className="relative flex items-center justify-center">
         <div className="absolute inset-0 bg-[#FFD700]/10 blur-3xl rounded-full" />
         <img
-          src="/images/mentor.png"
+          src="/images/mentor2.png"
           alt="Senthilkumar Thanigachalam - Direct Selling Skill Trainer"
           className="relative w-full max-w-md md:max-w-lg h-auto object-contain mx-auto drop-shadow-[0_20px_60px_rgba(255,215,0,0.25)]"
         />
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 bg-[#FFD700] text-black rounded-full px-4 py-1.5 text-xs font-bold shadow-lg z-10">
-          <ShieldCheck className="h-3.5 w-3.5" /> 20+ Years Experience
-        </div>
+      
       </motion.div>
 
       <motion.div
@@ -521,34 +741,42 @@ const AuthoritySection = () => (
           <span className="text-[#FFD700]">Thanigachalam</span>
         </h2>
         <p className="mt-4 text-[#FFD700] font-[Manrope] font-semibold text-lg sm:text-xl">
-          India’s Leading Direct Selling Skill Trainer
+                    DIRECT SELLING BUSINESS GROWTH STRATEGIST
         </p>
         <div className="mt-6 space-y-4 text-neutral-300 font-[Manrope] text-base sm:text-lg leading-relaxed">
-         <p>
-  Mr. Senthil Kumar Thanigachalam has a deep interest in the network marketing industry and personality development.
-</p>
-<p>
-  After more than 20 years of experience and research, he discovered a new system called <strong>“NME365”</strong> and its impact on the network marketing business.
-</p>
-<p>
-  He has trained more than 1 lakh people from various companies, helping them achieve remarkable positions in their fields and succeed in their careers.
-</p>
-<p>
-  The <strong>NME365</strong> system is unique and the first of its kind in India. It has empowered common people to break free from the rat race and become high-income earners.
-</p>
-          <p>
-            My mission is simple:{" "}
-            <span className="text-white font-semibold">
-              make ₹1 Crore achievable for 1000+ Tamil direct sellers.
-            </span>
-          </p>
+                    <p className="text-justify [text-align-last:left]">
+                        2003 முதல் Direct Selling துறையில் செயல்பட்டு வரும் செந்தில்குமார் தணிகாசலம், நேரடி விற்பனை மற்றும் Network Marketing துறையில் 20+ ஆண்டுகள் அனுபவம் கொண்டவர்.
+                    </p>
+
+                    <p className="text-justify [text-align-last:left]">
+                        இந்தியாவின் 10+ மாநிலங்களிலும், 5 நாடுகளிலும் தனது வணிக அனுபவத்தையும் பயிற்சியையும் கொண்டு சென்றுள்ள அவர், பல்வேறு நிறுவனங்களைச் சேர்ந்த பத்து ஆயிரத்திற்கும் மேற்பட்டவர்களுக்கு பயிற்சி அளித்துள்ளார்.
+                    </p>
+
+                    <p className="text-justify [text-align-last:left]">
+                        20+ ஆண்டுகால அனுபவம், களப்பணி மற்றும் தொடர்ச்சியான ஆய்வின் மூலம், இன்றைய Direct Selling உலகிற்கு தேவையான New-Age Methods, Fast Lane System மற்றும் Duplicatable Leadership Frameworks ஆகியவற்றை உருவாக்கி வருகிறார்.
+                    </p>
+                    <div className="text-center w-full">
+                        <h3 className="font-[Outfit] font-extrabold text-[#FFD700] text-xl sm:text-2xl lg:text-3xl tracking-wide">
+                            MY MISSION
+                        </h3>
+
+                        <p className="mt-4 font-[Manrope] text-neutral-300 font-bold text-[13px] sm:text-base lg:text-lg leading-relaxed">
+                            <span className="block whitespace-nowrap">
+                                1000+ தமிழ் Direct Sellers-ஐ ₹1 Crore / Six-Figure Income
+                            </span>
+
+                            <span className="block mt-1">
+                                இலக்கை நோக்கி வழிநடத்துவது.
+                            </span>
+                        </p>
+                    </div>            
         </div>
 
         <div className="mt-8 grid grid-cols-3 gap-3 max-w-md">
           {[
-            { n: "10K+", l: "Trained" },
-            { n: "500+", l: "6-figure earners" },
-            { n: "10+", l: "Years" },
+            { n: "10K+", l: "People Trained" },
+            { n: "10+", l: "Indian States" },
+            { n: "20+", l: "Years Experience" },
           ].map((s) => (
             <div
               key={s.l}
@@ -604,7 +832,7 @@ const UrgencySection = () => (
           data-testid="urgency-cta-button"
           className="inline-flex items-center gap-2 bg-black text-[#FFD700] font-bold text-base sm:text-lg py-4 px-10 rounded-lg shadow-[0_0_40px_rgba(0,0,0,0.35)] hover:scale-105 transition-transform"
         >
-          I’m Serious — Reserve My Seat <ArrowRight className="h-5 w-5" />
+          I’m Ready — Reserve My Seat <ArrowRight className="h-5 w-5" />
         </button>
       </motion.div>
     </div>
@@ -631,14 +859,14 @@ const FinalCTASection = () => (
         className="font-[Outfit] font-extrabold text-white text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-[1.05]"
       >
         Are you ready to{" "}
-        <span className="text-[#FFD700]">change your life?</span>
+                <span className="text-[#FFD700]"> change the way you work?</span>
       </motion.h2>
       <motion.p
         {...fadeUp}
         transition={{ ...fadeUp.transition, delay: 0.2 }}
         className="mt-6 text-neutral-400 font-[Manrope] text-base sm:text-lg"
       >
-        One decision today can rewrite the next 10 years. The seat is yours if you take it.
+                One decision today can save your time and help you step into a new-age way of working.
       </motion.p>
 
       <motion.div
@@ -693,7 +921,6 @@ const LandingPage = () => {
       <PainPointsSection />
       <EmotionalSection />
       <SolutionSection />
-      <OfferSection />
       <AuthoritySection />
       <UrgencySection />
       <FinalCTASection />
