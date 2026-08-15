@@ -71,7 +71,7 @@ const HeroSection = () => (
                 <span className="h-px w-9 bg-[#FFD700]" />
 
                 <span className="font-[Manrope] font-semibold uppercase tracking-[0.25em] text-[#FFD700] text-lg sm:text-xl lg:text-2xl">
-                    TAMIL DIRECT SELLING ACADEMY
+                    TAMILNADU DIRECT SELLING ACADEMY
                 </span>
 
                 <span className="h-px w-9 bg-[#FFD700]" />
