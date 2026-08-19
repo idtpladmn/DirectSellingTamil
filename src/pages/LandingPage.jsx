@@ -425,7 +425,7 @@ const detailedPainPoints = [
         title: "Team Active-ஆக இருக்கிறது… ஆனால் Productive-ஆக இல்லை",
         description:
             "Team members செயல்பாட்டில் இருக்கிறார்கள், ஆனால் consistent results உருவாகவில்லை. காலப்போக்கில் சிலர் business-ஐ விட்டு விலகிவிடுகிறார்கள்.",
-        graphLabel: "Inactive Team",
+        graphLabel: "Small Team, Low Result, Members Quitting",
         value: 85,
     },
     {
@@ -433,21 +433,21 @@ const detailedPainPoints = [
         description:
             "நீங்கள் தொடர்ந்து follow-up செய்தால்தான் sales நடக்கிறது. நீங்கள் motivate செய்யவில்லை என்றால் Team inactive-ஆக மாறுகிறது.No Leverage Income.Only Active Income",
         highlight: "No Leverage Income. Only Active Income.",
-        graphLabel: "Team Members Quitting",
+        graphLabel: "Team Performance 20%, Leader's Performance 80%",
         value: 80,
     },
     {
         title: "கற்றுக்கொண்டது அதிகம்… Results மாறவில்லை",
         description:
             "Training, webinars, books, videos என்று தொடர்ந்து கற்றுக்கொள்கிறீர்கள். Motivation மட்டுமே கிடைக்கிறது… ஆனால் Business Results மாறுவதில்லை.",
-        graphLabel: "Prospect Rejection",
+        graphLabel: "Same Result Month on Month",
         value: 80,
     },
     {
         title: "வேலை செய்கிறீர்கள்… ஆனால் உங்கள் வியாபாரம் விரிவடைகிறதா?",
         description:
             "நாள் முழுவதும் busy-ஆக இருக்கிறீர்கள். ஆனால் உங்கள் செயல்பாடுகள் நீண்டகால வணிக வளர்ச்சிக்கான அடித்தளத்தை உருவாக்குகிறதா? உங்கள் Team-ல் Duplication — பிரதியெடுத்தல் நடைபெறுகிறதா?",
-        graphLabel: "Sales Closing Problems",
+        graphLabel: "No Market Expansion",
         value: 95,
     },
 ];
