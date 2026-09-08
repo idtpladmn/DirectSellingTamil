@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   CheckCircle2,
@@ -840,55 +840,214 @@ const UrgencySection = () => (
 );
 
 /* ---------------- 11. FINAL CTA ---------------- */
-const FinalCTASection = () => (
-  <section
-    id="final-cta"
-    data-testid="final-cta-section"
-    className="bg-[#0B0B0B] py-24 md:py-36 relative overflow-hidden"
-  >
-    <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#FFD700]/10 blur-[140px]" />
-    </div>
-    <div className="relative max-w-3xl mx-auto px-5 text-center">
-      <motion.div {...fadeUp}>
-        <SectionOverline>Your Next Move</SectionOverline>
-      </motion.div>
-      <motion.h2
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.1 }}
-        className="font-[Outfit] font-extrabold text-white text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-[1.05]"
-      >
-        Are you ready to{" "}
-                <span className="text-[#FFD700]"> change the way you work?</span>
-      </motion.h2>
-      <motion.p
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.2 }}
-        className="mt-6 text-neutral-400 font-[Manrope] text-base sm:text-lg"
-      >
-                One decision today can save your time and help you step into a new-age way of working.
-      </motion.p>
+const FinalCTASection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
+  const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
 
-      <motion.div
-        {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.3 }}
-        className="mt-12"
-      >
-        <button
-          data-testid="final-cta-button"
-          onClick={() => window.open("https://wa.me/910000000000", "_blank")}
-          className="group inline-flex items-center justify-center gap-3 bg-[#FFD700] text-black font-bold text-lg sm:text-2xl tracking-wide py-5 px-12 md:py-6 md:px-16 rounded-xl shadow-[0_0_50px_rgba(255,215,0,0.4)] hover:shadow-[0_0_80px_rgba(255,215,0,0.7)] hover:-translate-y-1 transition-all duration-300"
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    if (status !== "idle") {
+      setStatus("idle");
+      setMessage("");
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      setStatus("error");
+      setMessage("Please enter your name and WhatsApp number.");
+      return;
+    }
+
+    setStatus("submitting");
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Unable to submit your details.");
+      }
+
+      setStatus("success");
+      setMessage("Thank you! Your details have been received. We’ll contact you shortly.");
+
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+      });
+    } catch (error) {
+      console.error("Lead form error:", error);
+      setStatus("error");
+      setMessage(
+        "Something went wrong. Please try again in a moment."
+      );
+    }
+  };
+
+  return (
+    <section
+      id="final-cta"
+      data-testid="final-cta-section"
+      className="bg-[#0B0B0B] py-24 md:py-36 relative overflow-hidden"
+    >
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#FFD700]/10 blur-[140px]" />
+      </div>
+
+      <div className="relative max-w-3xl mx-auto px-5 text-center">
+        <motion.div {...fadeUp}>
+          <SectionOverline>Your Next Move</SectionOverline>
+        </motion.div>
+
+        <motion.h2
+          {...fadeUp}
+          transition={{ ...fadeUp.transition, delay: 0.1 }}
+          className="font-[Outfit] font-extrabold text-white text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-[1.05]"
         >
-          Join Now
-          <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
-        </button>
+          Are you ready to{" "}
+          <span className="text-[#FFD700]"> change the way you work?</span>
+        </motion.h2>
+
+        <motion.p
+          {...fadeUp}
+          transition={{ ...fadeUp.transition, delay: 0.2 }}
+          className="mt-6 text-neutral-400 font-[Manrope] text-base sm:text-lg"
+        >
+          One decision today can save your time and help you step into a new-age way of working.
+        </motion.p>
+
+        <motion.form
+          {...fadeUp}
+          transition={{ ...fadeUp.transition, delay: 0.3 }}
+          onSubmit={handleSubmit}
+          className="mt-12 mx-auto max-w-xl bg-white/[0.04] border border-white/10 rounded-2xl p-6 sm:p-8 text-left shadow-[0_0_50px_rgba(255,215,0,0.08)]"
+        >
+          <div className="space-y-5">
+            <div>
+              <label
+                htmlFor="lead-name"
+                className="block mb-2 text-sm font-semibold text-neutral-200 font-[Manrope]"
+              >
+                Name <span className="text-[#FFD700]">*</span>
+              </label>
+              <input
+                id="lead-name"
+                name="name"
+                type="text"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+                autoComplete="name"
+                required
+                className="w-full rounded-xl bg-white text-[#0B0B0B] border border-white/10 px-4 py-4 font-[Manrope] text-base outline-none focus:ring-2 focus:ring-[#FFD700] transition"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="lead-phone"
+                className="block mb-2 text-sm font-semibold text-neutral-200 font-[Manrope]"
+              >
+                WhatsApp Number <span className="text-[#FFD700]">*</span>
+              </label>
+              <input
+                id="lead-phone"
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Enter your WhatsApp number"
+                autoComplete="tel"
+                inputMode="tel"
+                required
+                className="w-full rounded-xl bg-white text-[#0B0B0B] border border-white/10 px-4 py-4 font-[Manrope] text-base outline-none focus:ring-2 focus:ring-[#FFD700] transition"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="lead-email"
+                className="block mb-2 text-sm font-semibold text-neutral-200 font-[Manrope]"
+              >
+                Email <span className="text-neutral-500">(Optional)</span>
+              </label>
+              <input
+                id="lead-email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email address"
+                autoComplete="email"
+                className="w-full rounded-xl bg-white text-[#0B0B0B] border border-white/10 px-4 py-4 font-[Manrope] text-base outline-none focus:ring-2 focus:ring-[#FFD700] transition"
+              />
+            </div>
+
+            <button
+              type="submit"
+              data-testid="final-cta-button"
+              disabled={status === "submitting"}
+              className="group w-full inline-flex items-center justify-center gap-3 bg-[#FFD700] text-black font-bold text-lg sm:text-xl tracking-wide py-5 px-8 rounded-xl shadow-[0_0_50px_rgba(255,215,0,0.4)] hover:shadow-[0_0_80px_rgba(255,215,0,0.7)] hover:-translate-y-1 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+            >
+              {status === "submitting" ? "Submitting..." : "Join Now"}
+              {status !== "submitting" && (
+                <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
+              )}
+            </button>
+
+            {message && (
+              <div
+                role="status"
+                className={`rounded-xl px-4 py-3 text-center font-[Manrope] text-sm sm:text-base ${
+                  status === "success"
+                    ? "bg-green-500/10 border border-green-500/30 text-green-300"
+                    : "bg-red-500/10 border border-red-500/30 text-red-300"
+                }`}
+              >
+                {message}
+              </div>
+            )}
+
+            <p className="text-center text-xs text-neutral-500 font-[Manrope]">
+              Your details are securely submitted for our team to contact you.
+            </p>
+          </div>
+        </motion.form>
+
         <p className="mt-6 text-xs sm:text-sm text-neutral-500 font-[Manrope]">
           © {new Date().getFullYear()} Direct Selling Tamil Academy — Senthilkumar Thanigachalam. All rights reserved.
         </p>
-      </motion.div>
-    </div>
-  </section>
-);
+      </div>
+    </section>
+  );
+};
 
 /* ---------------- STICKY WHATSAPP ---------------- */
 const StickyWhatsApp = () => (
