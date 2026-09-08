@@ -38,7 +38,7 @@ export default async function handler(req, res) {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: token,
+          Authorization: `Bearer ${token}`,
           Version: "2021-07-28",
         },
         body: JSON.stringify({
