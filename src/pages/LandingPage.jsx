@@ -877,7 +877,7 @@ const AuthoritySection = () => (
 
                 <div className="mt-8 grid grid-cols-3 gap-3 max-w-md">
                     {[
-                        { n: "10K+", l: "People Trained" },
+                        { n: "1 Lakh+", l: "People Trained" },
                         { n: "14+", l: "Indian States" },
                         { n: "22+", l: "Years Experience" },
                     ].map((s) => (
