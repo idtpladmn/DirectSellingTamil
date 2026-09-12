@@ -813,7 +813,7 @@ const AuthoritySection = () => (
         data-testid="authority-section"
         className="relative bg-[#0B0B0B] py-20 md:py-28 border-t border-white/5 overflow-hidden"
         style={{
-            backgroundImage: "url('/images/training-crowd.jpg')",
+            backgroundImage: "url('/images/training-crowd.JPG')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
