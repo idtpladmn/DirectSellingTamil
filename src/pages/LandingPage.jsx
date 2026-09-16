@@ -61,7 +61,7 @@ const CoverPageSection = () => (
         className="w-full bg-black overflow-hidden"
     >
         <img
-            src="/images/cover-page.png"
+            src="/images/cover-page3.png"
             alt="The Bridge - Tamil Nadu Direct Selling Academy"
             className="block w-full h-auto"
         />
@@ -82,18 +82,27 @@ const WorkshopPromotionSection = () => (
 
                 <div className="relative text-center">
                     <div className="text-center">
+
+                        {/* Tamil Nadu Direct Selling Academy */}
+                        <motion.p
+                            {...fadeUp}
+                            className="font-[Outfit] font-medium text-[#FFD700] text-sm sm:text-base md:text-lg leading-none tracking-[0.08em] text-center"
+                        >
+                            — TAMILNADU DIRECT SELLING ACADEMY —
+                        </motion.p>
                         {/* First Line */}
                         <motion.p
                             {...fadeUp}
-                            className="font-[Outfit] font-medium text-[#FF8C00] text-lg sm:text-xl md:text-4xl leading-tight"
+                            transition={{ ...fadeUp.transition, delay: 0.1 }}
+                            className="mt-5 font-[Outfit] font-medium text-[#FF8C00] text-lg sm:text-xl md:text-5xl leading-tight"
                         >
-                            Double Your Team and Sales
+                            DOUBLE YOUR SALES AND TEAM
                         </motion.p>
 
                         {/* Second Line */}
                         <motion.p
                             {...fadeUp}
-                            transition={{ ...fadeUp.transition, delay: 0.1 }}
+                            transition={{ ...fadeUp.transition, delay: 0.2 }}
                             className="font-[Outfit] font-medium text-[#FF8C00] text-lg sm:text-xl md:text-4xl leading-tight"
                         >
                             in the Next 30 Days with {" "}
@@ -106,15 +115,16 @@ const WorkshopPromotionSection = () => (
                         {/* Third Line */}
                         <motion.p
                             {...fadeUp}
-                            transition={{ ...fadeUp.transition, delay: 0.2 }}
+                            transition={{ ...fadeUp.transition, delay: 0.3 }}
                             className="mt-2 font-[Manrope] font-normal text-[#FF8C00] text-sm sm:text-base md:text-lg leading-tight"
                         >
                             Even if you are stuck in your business.
                         </motion.p>
                     </div>
+
                     <motion.div
                         {...fadeUp}
-                        transition={{ ...fadeUp.transition, delay: 0.3 }}
+                        transition={{ ...fadeUp.transition, delay: 0.4 }}
                         className="mt-8 sm:mt-10 inline-flex flex-col items-center justify-center rounded-2xl bg-[#E63946] px-8 py-5 sm:px-12 sm:py-6 shadow-[0_0_40px_rgba(230,57,70,0.25)]"
                     >
                         <span className="font-[Outfit] font-extrabold text-white text-xl sm:text-2xl md:text-3xl">
@@ -127,7 +137,7 @@ const WorkshopPromotionSection = () => (
 
                     <motion.div
                         {...fadeUp}
-                        transition={{ ...fadeUp.transition, delay: 0.4 }}
+                        transition={{ ...fadeUp.transition, delay: 0.5 }}
                         className="mt-8 sm:mt-10 font-[Manrope] text-white"
                     >
                         <p className="font-bold text-lg sm:text-xl md:text-2xl">
@@ -510,7 +520,7 @@ const detailedPainPoints = [
         title:
             "சரியான Prospects கிடைக்கவில்லை… கிடைத்த Leads-ல் யார் Qualified என்று தெரியவில்லை",
         description:
-            "Friends & Family circle குறைந்து வருகிறது. புதிய prospects எங்கே கிடைப்பது, Social Media-வில் வரும் enquiries-ல் யார் Qualified Lead, யார் வெறும் Random Lead என்பதை அடையாளம் கண்டு qualify செய்ய முடியவில்லை.",
+            "Friends & Family circle-ல் Prospects குறைந்து வருகிறது.. புதிய Unlimited Prospects-களை உருவாக்குவது எப்படி?, Social Media-வில் வரும் enquiries-ல் யார் Qualified Lead, யார் வெறும் Random Lead என்பதை அடையாளம் கண்டு qualify செய்ய முடியவில்லை.",
         graphLabel: "Finding New People",
         value: 80,
     },
