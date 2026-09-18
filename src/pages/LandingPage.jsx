@@ -183,7 +183,7 @@ const HeroSection = () => (
             <motion.h1
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: 0.1 }}
-                className="font-[Outfit] font-extrabold tracking-tight text-white text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.05]"
+                className="font-[Outfit] font-extrabold tracking-tight text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05]"
             >
                 We’re  on a Mission to Help{" "}
                 <span className="text-[#FFD700]">1000+ Tamil Direct Sellers</span>{" "}
@@ -1185,8 +1185,9 @@ const StickyWhatsApp = () => (
 const LandingPage = () => {
     return (
         <main data-testid="landing-page" className="bg-[#0B0B0B] text-white antialiased">
-            <CoverPageSection />
+           
             <WorkshopPromotionSection />
+            <CoverPageSection />
             <HeroSection />
             <VideoSection />
             <CorePromiseSection />
