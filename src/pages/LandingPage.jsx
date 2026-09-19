@@ -910,48 +910,360 @@ const AuthoritySection = () => (
 );
 
 /* ---------------- 10. URGENCY ---------------- */
-const UrgencySection = () => (
-    <section
-        data-testid="urgency-section"
-        className="bg-[#E63946] py-20 md:py-24 relative overflow-hidden"
-    >
-        <div className="absolute inset-0 opacity-10 bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.4)_0,rgba(0,0,0,0.4)_2px,transparent_2px,transparent_14px)]" />
-        <div className="relative max-w-3xl mx-auto px-5 text-center">
-            <motion.div {...fadeUp} className="inline-flex items-center gap-2 bg-black/90 text-white rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase mb-6">
-                <Clock className="h-3.5 w-3.5 text-[#FFD700]" /> Enrollment Closing Soon
-            </motion.div>
-            <motion.h2
-                {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.1 }}
-                className="font-[Outfit] font-extrabold text-white text-4xl sm:text-5xl lg:text-6xl tracking-tight"
-            >
-                Limited Seats Only
-            </motion.h2>
-            <motion.p
-                {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.2 }}
-                className="mt-5 text-white/95 font-[Manrope] text-lg sm:text-xl font-medium"
-            >
-                This is not for everyone.{" "}
-                <span className="font-bold">Only serious people.</span>
-            </motion.p>
-            <motion.div
-                {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.3 }}
-                className="mt-10"
-            >
-                <button
-                    onClick={scrollToFinal}
-                    data-testid="urgency-cta-button"
-                    className="inline-flex items-center gap-2 bg-black text-[#FFD700] font-bold text-base sm:text-lg py-4 px-10 rounded-lg shadow-[0_0_40px_rgba(0,0,0,0.35)] hover:scale-105 transition-transform"
-                >
-                    I’m Ready — Reserve My Seat <ArrowRight className="h-5 w-5" />
-                </button>
-            </motion.div>
-        </div>
-    </section>
-);
+const UrgencySection = () => {
+    const [showBookForm, setShowBookForm] = React.useState(false);
 
+    const [formData, setFormData] = React.useState({
+        name: "",
+        whatsapp: "",
+        city: "",
+    });
+
+    const [submitting, setSubmitting] = React.useState(false);
+    const [submitted, setSubmitted] = React.useState(false);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (
+            !formData.name.trim() ||
+            !formData.whatsapp.trim() ||
+            !formData.city.trim()
+        ) {
+            alert("Please fill in all the details.");
+            return;
+        }
+
+        if (formData.whatsapp.replace(/\D/g, "").length < 10) {
+            alert("Please enter a valid WhatsApp number.");
+            return;
+        }
+
+        setSubmitting(true);
+
+        try {
+            const params = new URLSearchParams();
+
+            params.append("name", formData.name.trim());
+            params.append("whatsapp", formData.whatsapp.trim());
+            params.append("city", formData.city.trim());
+
+            await fetch(
+                "https://script.google.com/macros/s/AKfycbxxAji5mgvANjJ7aMBd7eqIH08eFRK1I0n_IFn1f5c62Y--2MfniP-bpdGG-_xZgDtLeg/exec",
+                {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: params,
+                }
+            );
+
+            setSubmitted(true);
+        } catch (error) {
+            console.error("Free e-book registration error:", error);
+            alert("Something went wrong. Please try again.");
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
+    return (
+        <>
+            <section
+                data-testid="urgency-section"
+                className="bg-[#E63946] py-16 md:py-20 relative overflow-hidden"
+            >
+                {/* Diagonal background */}
+                <div className="absolute inset-0 opacity-10 bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.4)_0,rgba(0,0,0,0.4)_2px,transparent_2px,transparent_14px)]" />
+
+                <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6">
+
+                    {/* =====================================================
+                        BOOK 1 | CENTER CONTENT | BOOK 2
+                    ===================================================== */}
+                    <div className="grid grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_260px] xl:grid-cols-[300px_minmax(0,1fr)_300px] gap-6 xl:gap-10 items-center">
+
+                        {/* ================= LEFT BOOK ================= */}
+                        <motion.div
+                            {...fadeUp}
+                            transition={{
+                                ...fadeUp.transition,
+                                delay: 0.05,
+                            }}
+                            className="flex justify-center lg:justify-start order-1"
+                        >
+                            <img
+                                src="/images/free-book-1.png"
+                                alt="Direct Selling as Side Hustle"
+                                className="w-full max-w-[230px] lg:max-w-[250px] xl:max-w-[290px] h-auto rounded-lg shadow-2xl"
+                            />
+                        </motion.div>
+
+
+                        {/* ================= CENTER ================= */}
+                        <div className="text-center order-2">
+
+                            {/* Enrollment Closing Soon */}
+                            <motion.div
+                                {...fadeUp}
+                                className="inline-flex items-center gap-2 bg-black/90 text-white rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase mb-6"
+                            >
+                                <Clock className="h-3.5 w-3.5 text-[#FFD700]" />
+                                Enrollment Closing Soon
+                            </motion.div>
+
+
+                            {/* Limited Seats */}
+                            <motion.h2
+                                {...fadeUp}
+                                transition={{
+                                    ...fadeUp.transition,
+                                    delay: 0.1,
+                                }}
+                                className="font-[Outfit] font-extrabold text-white text-4xl sm:text-5xl lg:text-5xl xl:text-6xl tracking-tight"
+                            >
+                                Limited Seats Only
+                            </motion.h2>
+
+
+                            {/* Serious People */}
+                            <motion.p
+                                {...fadeUp}
+                                transition={{
+                                    ...fadeUp.transition,
+                                    delay: 0.2,
+                                }}
+                                className="mt-5 text-white/95 font-[Manrope] text-lg sm:text-xl font-medium"
+                            >
+                                This is not for everyone.{" "}
+                                <span className="font-bold">
+                                    Only serious people.
+                                </span>
+                            </motion.p>
+
+
+                            {/* ================= CENTER BUTTONS ================= */}
+
+                            {/* Reserve My Seat */}
+                            <motion.div
+                                {...fadeUp}
+                                transition={{
+                                    ...fadeUp.transition,
+                                    delay: 0.3,
+                                }}
+                                className="mt-8"
+                            >
+                                <button
+                                    onClick={scrollToFinal}
+                                    data-testid="urgency-cta-button"
+                                    className="w-full max-w-[560px] inline-flex items-center justify-center gap-2 bg-black text-[#FFD700] font-bold text-base sm:text-lg py-4 px-8 rounded-lg shadow-[0_0_40px_rgba(0,0,0,0.35)] hover:scale-[1.02] transition-transform"
+                                >
+                                    I’m Ready — Reserve My Seat
+                                    <ArrowRight className="h-5 w-5" />
+                                </button>
+                            </motion.div>
+
+
+                            {/* Get My Free E-Books */}
+                            <motion.div
+                                {...fadeUp}
+                                transition={{
+                                    ...fadeUp.transition,
+                                    delay: 0.4,
+                                }}
+                                className="mt-4"
+                            >
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setShowBookForm(true);
+                                        setSubmitted(false);
+                                    }}
+                                    className="w-full max-w-[560px] inline-flex items-center justify-center gap-2 bg-[#FFD700] text-black font-extrabold text-base sm:text-lg py-4 px-8 rounded-lg shadow-[0_0_35px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-transform"
+                                >
+                                    GET MY FREE E-BOOKS
+                                    <ArrowRight className="h-5 w-5" />
+                                </button>
+                            </motion.div>
+
+                        </div>
+
+
+                        {/* ================= RIGHT BOOK ================= */}
+                        <motion.div
+                            {...fadeUp}
+                            transition={{
+                                ...fadeUp.transition,
+                                delay: 0.1,
+                            }}
+                            className="flex justify-center lg:justify-end order-3"
+                        >
+                            <img
+                                src="/images/free-book-2.png"
+                                alt="நேரடி விற்பனை எனும் சைட் ஹஸ்ல்"
+                                className="w-full max-w-[230px] lg:max-w-[250px] xl:max-w-[290px] h-auto rounded-lg shadow-2xl"
+                            />
+                        </motion.div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+            {/* =========================================================
+                FREE E-BOOK REGISTRATION POPUP
+            ========================================================= */}
+            {showBookForm && (
+                <div
+                    className="fixed inset-0 z-[9999] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4"
+                    onClick={() => setShowBookForm(false)}
+                >
+                    <div
+                        className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 sm:p-8"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+
+                        {/* Close */}
+                        <button
+                            type="button"
+                            onClick={() => setShowBookForm(false)}
+                            className="absolute top-3 right-4 text-gray-500 hover:text-black text-2xl font-bold"
+                            aria-label="Close"
+                        >
+                            ×
+                        </button>
+
+
+                        {!submitted ? (
+                            <>
+                                <div className="text-center mb-6">
+                                    <h3 className="font-[Outfit] font-extrabold text-black text-2xl sm:text-3xl">
+                                        Get Your Free E-Books
+                                    </h3>
+
+                                    <p className="mt-2 text-gray-600 font-[Manrope] text-sm sm:text-base">
+                                        Enter your details to receive the books.
+                                    </p>
+                                </div>
+
+
+                                <form
+                                    onSubmit={handleSubmit}
+                                    className="space-y-4"
+                                >
+
+                                    {/* Name */}
+                                    <div>
+                                        <label className="block text-sm font-bold text-gray-800 mb-1.5">
+                                            Name
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            placeholder="Enter your name"
+                                            className="w-full px-4 py-3.5 rounded-lg border border-gray-300 bg-white text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+                                            required
+                                        />
+                                    </div>
+
+
+                                    {/* WhatsApp */}
+                                    <div>
+                                        <label className="block text-sm font-bold text-gray-800 mb-1.5">
+                                            WhatsApp Number
+                                        </label>
+
+                                        <input
+                                            type="tel"
+                                            name="whatsapp"
+                                            value={formData.whatsapp}
+                                            onChange={handleChange}
+                                            placeholder="Enter your WhatsApp number"
+                                            inputMode="numeric"
+                                            maxLength="10"
+                                            className="w-full px-4 py-3.5 rounded-lg border border-gray-300 bg-white text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+                                            required
+                                        />
+                                    </div>
+
+
+                                    {/* City */}
+                                    <div>
+                                        <label className="block text-sm font-bold text-gray-800 mb-1.5">
+                                            City
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            name="city"
+                                            value={formData.city}
+                                            onChange={handleChange}
+                                            placeholder="Enter your city"
+                                            className="w-full px-4 py-3.5 rounded-lg border border-gray-300 bg-white text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+                                            required
+                                        />
+                                    </div>
+
+
+                                    {/* Submit */}
+                                    <button
+                                        type="submit"
+                                        disabled={submitting}
+                                        className="w-full mt-2 inline-flex items-center justify-center gap-2 bg-black text-[#FFD700] font-extrabold text-base sm:text-lg py-4 px-6 rounded-lg hover:scale-[1.02] transition-transform disabled:opacity-60 disabled:hover:scale-100"
+                                    >
+                                        {submitting
+                                            ? "Submitting..."
+                                            : "GET MY FREE E-BOOKS"}
+                                    </button>
+
+                                </form>
+                            </>
+                        ) : (
+                            <div className="text-center py-6">
+
+                                <div className="mx-auto mb-5 h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
+                                    <span className="text-green-600 text-3xl">
+                                        ✓
+                                    </span>
+                                </div>
+
+                                <h3 className="font-[Outfit] font-extrabold text-black text-2xl sm:text-3xl">
+                                    Registration Successful!
+                                </h3>
+
+                                <p className="mt-3 text-gray-600 font-[Manrope]">
+                                    Thank you for registering for the free e-books.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    onClick={() => setShowBookForm(false)}
+                                    className="mt-6 bg-black text-[#FFD700] font-bold px-6 py-3 rounded-lg"
+                                >
+                                    Close
+                                </button>
+
+                            </div>
+                        )}
+
+                    </div>
+                </div>
+            )}
+        </>
+    );
+};
 /* ---------------- 11. FINAL CTA ---------------- */
 const FinalCTASection = () => {
     const [formData, setFormData] = useState({
