@@ -499,6 +499,8 @@ const ProblemSection = () => (
 );
 /* ---------------- 5. PAIN POINTS ---------------- */
 
+/* ---------------- 5. PAIN POINTS ---------------- */
+
 const detailedPainPoints = [
     {
         title: "Monthly Income Pressure",
@@ -586,8 +588,10 @@ const PainPointsSection = () => (
                 </h2>
             </motion.div>
 
+
             {/* 7 Pain Point Cards */}
             <div className="space-y-5 sm:space-y-6">
+
                 {detailedPainPoints.map((point, idx) => (
                     <motion.div
                         key={idx}
@@ -602,25 +606,25 @@ const PainPointsSection = () => (
                             margin: "-80px",
                         }}
                         className="
-              bg-white
-              border border-black/10
-              rounded-2xl
-              p-5 sm:p-7 lg:p-8
-              shadow-sm
-              hover:shadow-md
-              transition-shadow
-            "
+                            bg-white
+                            border border-black/10
+                            rounded-2xl
+                            p-5 sm:p-7 lg:p-8
+                            shadow-sm
+                            hover:shadow-md
+                            transition-shadow
+                        "
                     >
 
                         {/* Number + Title */}
                         <h3
                             className="
-                font-[Outfit]
-                font-extrabold
-                text-[#0B0B0B]
-                text-lg sm:text-xl lg:text-2xl
-                leading-snug
-              "
+                                font-[Outfit]
+                                font-extrabold
+                                text-[#0B0B0B]
+                                text-lg sm:text-xl lg:text-2xl
+                                leading-snug
+                            "
                         >
                             <span className="text-[#E63946]">
                                 {idx + 1}.
@@ -634,33 +638,36 @@ const PainPointsSection = () => (
                             )}
                         </h3>
 
+
                         {/* Description */}
                         <p
                             className="
-                mt-3
-                font-[Manrope]
-                text-neutral-600
-                text-base sm:text-lg
-                leading-relaxed
-              "
+                                mt-3
+                                font-[Manrope]
+                                text-neutral-600
+                                text-base sm:text-lg
+                                leading-relaxed
+                            "
                         >
                             {point.description}
                         </p>
+
 
                         {/* Highlight */}
                         {point.highlight && (
                             <p
                                 className="
-                  mt-4
-                  font-[Outfit]
-                  font-bold
-                  text-[#0f0e0e]
-                  text-base sm:text-lg
-                "
+                                    mt-4
+                                    font-[Outfit]
+                                    font-bold
+                                    text-[#0f0e0e]
+                                    text-base sm:text-lg
+                                "
                             >
                                 {point.highlight}
                             </p>
                         )}
+
 
                         {/* Graph */}
                         <div className="mt-6">
@@ -669,55 +676,61 @@ const PainPointsSection = () => (
                             <div className="flex items-center justify-between mb-2">
                                 <span
                                     className="
-                    font-[Outfit]
-                    font-bold
-                    text-[#0B0B0B]
-                    text-sm sm:text-base
-                  "
+                                        font-[Outfit]
+                                        font-bold
+                                        text-[#0B0B0B]
+                                        text-sm sm:text-base
+                                    "
                                 >
                                     {point.graphLabel}
                                 </span>
 
                                 <span
                                     className="
-                    font-[Outfit]
-                    font-extrabold
-                    text-[#E63946]
-                    text-sm sm:text-base
-                    tabular-nums
-                  "
+                                        font-[Outfit]
+                                        font-extrabold
+                                        text-[#E63946]
+                                        text-sm sm:text-base
+                                        tabular-nums
+                                    "
                                 >
                                     {point.value}%
                                 </span>
                             </div>
 
+
                             {/* Progress Bar */}
-                            <div className="h-3 w-full bg-black/5 rounded-full overflow-hidden">
-                                <motion.div
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: `${point.value}%` }}
-                                    transition={{
-                                        duration: 1.2,
-                                        ease: "easeOut",
-                                        delay: 0.2 + idx * 0.05,
-                                    }}
-                                    viewport={{
-                                        once: true,
-                                        margin: "-80px",
-                                    }}
-                                    className="
-                    h-full
-                    rounded-full
-                    bg-gradient-to-r
-                    from-[#E63946]
-                    to-[#ff6b73]
-                  "
-                                />
-                            </div>
+<div className="h-3 w-full bg-black/5 rounded-full overflow-hidden">
+    <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{
+            duration: 1.2,
+            ease: "easeOut",
+        }}
+        viewport={{
+            once: true,
+            amount: 0.5,
+        }}
+        style={{
+            width: `${point.value}%`,
+            transformOrigin: "left center",
+        }}
+        className="
+            h-full
+            rounded-full
+            bg-gradient-to-r
+            from-[#E63946]
+            to-[#ff6b73]
+        "
+    />
+</div>
 
                         </div>
+
                     </motion.div>
                 ))}
+
             </div>
 
         </div>
@@ -910,6 +923,7 @@ const AuthoritySection = () => (
 );
 
 /* ---------------- 10. URGENCY ---------------- */
+
 const UrgencySection = () => {
     const [showBookForm, setShowBookForm] = React.useState(false);
 
@@ -979,17 +993,17 @@ const UrgencySection = () => {
         <>
             <section
                 data-testid="urgency-section"
-                className="bg-[#E63946] py-16 md:py-20 relative overflow-hidden"
+                className="bg-[#E63946] py-14 md:py-18 relative overflow-hidden"
             >
                 {/* Diagonal background */}
                 <div className="absolute inset-0 opacity-10 bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.4)_0,rgba(0,0,0,0.4)_2px,transparent_2px,transparent_14px)]" />
 
-                <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6">
+                <div className="relative max-w-[1450px] mx-auto px-4 sm:px-6">
 
                     {/* =====================================================
                         BOOK 1 | CENTER CONTENT | BOOK 2
                     ===================================================== */}
-                    <div className="grid grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_260px] xl:grid-cols-[300px_minmax(0,1fr)_300px] gap-6 xl:gap-10 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)_240px] xl:grid-cols-[270px_minmax(0,1fr)_270px] gap-6 xl:gap-10 items-center">
 
                         {/* ================= LEFT BOOK ================= */}
                         <motion.div
@@ -1003,7 +1017,7 @@ const UrgencySection = () => {
                             <img
                                 src="/images/free-book-1.png"
                                 alt="Direct Selling as Side Hustle"
-                                className="w-full max-w-[230px] lg:max-w-[250px] xl:max-w-[290px] h-auto rounded-lg shadow-2xl"
+                                className="w-full max-w-[210px] lg:max-w-[225px] xl:max-w-[260px] h-auto rounded-lg shadow-2xl"
                             />
                         </motion.div>
 
@@ -1011,88 +1025,100 @@ const UrgencySection = () => {
                         {/* ================= CENTER ================= */}
                         <div className="text-center order-2">
 
-                            {/* Enrollment Closing Soon */}
+                            {/* E-Book */}
                             <motion.div
                                 {...fadeUp}
-                                className="inline-flex items-center gap-2 bg-black/90 text-white rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase mb-6"
+                                className="inline-flex items-center gap-2 bg-black/90 text-white rounded-full px-5 py-2 text-xs sm:text-sm font-bold tracking-[0.15em] uppercase mb-5"
                             >
                                 <Clock className="h-3.5 w-3.5 text-[#FFD700]" />
-                                Enrollment Closing Soon
+                                E-BOOK
                             </motion.div>
 
 
-                            {/* Limited Seats */}
-                            <motion.h2
-                                {...fadeUp}
-                                transition={{
-                                    ...fadeUp.transition,
-                                    delay: 0.1,
-                                }}
-                                className="font-[Outfit] font-extrabold text-white text-4xl sm:text-5xl lg:text-5xl xl:text-6xl tracking-tight"
-                            >
-                                Limited Seats Only
-                            </motion.h2>
+                            {/* Get Your Free E-Books */}
+                           {/* Claim Your E-Books */}
+<motion.h2
+    {...fadeUp}
+    transition={{
+        ...fadeUp.transition,
+        delay: 0.1,
+    }}
+    className="font-[Outfit] font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl xl:text-5xl tracking-tight leading-tight"
+>
+    Claim Your E-Books
+</motion.h2>
 
 
-                            {/* Serious People */}
-                            <motion.p
-                                {...fadeUp}
-                                transition={{
-                                    ...fadeUp.transition,
-                                    delay: 0.2,
-                                }}
-                                className="mt-5 text-white/95 font-[Manrope] text-lg sm:text-xl font-medium"
-                            >
-                                This is not for everyone.{" "}
-                                <span className="font-bold">
-                                    Only serious people.
-                                </span>
-                            </motion.p>
+{/* E-Book Value */}
+<motion.div
+    {...fadeUp}
+    transition={{
+        ...fadeUp.transition,
+        delay: 0.2,
+    }}
+    className="mt-4 flex items-center justify-center gap-3 font-[Manrope] font-bold"
+>
+    <span className="text-white text-lg sm:text-xl md:text-2xl">
+        E-Book Value
+    </span>
+
+    {/* ₹299 with X cancellation mark */}
+    <span className="relative inline-flex items-center justify-center text-[#FFD700] font-extrabold text-2xl sm:text-3xl md:text-4xl px-1">
+        ₹299
+
+        <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <span className="absolute w-[35%] h-[4px] bg-black rounded-full rotate-45" />
+            <span className="absolute w-[35%] h-[4px] bg-black rounded-full -rotate-45" />
+        </span>
+    </span>
+
+    <span className="text-white font-bold text-xl sm:text-2xl md:text-3xl">
+        →
+    </span>
+
+    <span className="text-[#FFD700] font-extrabold text-2xl sm:text-3xl md:text-4xl">
+        FREE
+    </span>
+</motion.div>
 
 
-                            {/* ================= CENTER BUTTONS ================= */}
+{/* Description */}
+<motion.p
+    {...fadeUp}
+    transition={{
+        ...fadeUp.transition,
+        delay: 0.3,
+    }}
+    className="mt-6 text-white/95 font-[Manrope] text-[11px] sm:text-base md:text-xl font-medium leading-relaxed text-center whitespace-nowrap"
+>
+    உங்கள் பெயர் மற்றும் WhatsApp எண்ணை பதிவு செய்யுங்கள்.
+    <br />
+    இந்த Exclusive E-Books உங்கள் WhatsApp-க்கு அனுப்பப்படும்.
+</motion.p>
 
-                            {/* Reserve My Seat */}
-                            <motion.div
-                                {...fadeUp}
-                                transition={{
-                                    ...fadeUp.transition,
-                                    delay: 0.3,
-                                }}
-                                className="mt-8"
-                            >
-                                <button
-                                    onClick={scrollToFinal}
-                                    data-testid="urgency-cta-button"
-                                    className="w-full max-w-[560px] inline-flex items-center justify-center gap-2 bg-black text-[#FFD700] font-bold text-base sm:text-lg py-4 px-8 rounded-lg shadow-[0_0_40px_rgba(0,0,0,0.35)] hover:scale-[1.02] transition-transform"
-                                >
-                                    I’m Ready — Reserve My Seat
-                                    <ArrowRight className="h-5 w-5" />
-                                </button>
-                            </motion.div>
-
-
-                            {/* Get My Free E-Books */}
-                            <motion.div
-                                {...fadeUp}
-                                transition={{
-                                    ...fadeUp.transition,
-                                    delay: 0.4,
-                                }}
-                                className="mt-4"
-                            >
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setShowBookForm(true);
-                                        setSubmitted(false);
-                                    }}
-                                    className="w-full max-w-[560px] inline-flex items-center justify-center gap-2 bg-[#FFD700] text-black font-extrabold text-base sm:text-lg py-4 px-8 rounded-lg shadow-[0_0_35px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-transform"
-                                >
-                                    GET MY FREE E-BOOKS
-                                    <ArrowRight className="h-5 w-5" />
-                                </button>
-                            </motion.div>
+{/* Get Access Button */}
+<motion.div
+    {...fadeUp}
+    transition={{
+        ...fadeUp.transition,
+        delay: 0.4,
+    }}
+    className="mt-7"
+>
+    <button
+        type="button"
+        onClick={() => {
+            setShowBookForm(true);
+            setSubmitted(false);
+        }}
+        data-testid="urgency-cta-button"
+        className="w-full max-w-[520px] inline-flex items-center justify-center gap-2 bg-[#FFD700] text-black font-extrabold text-base sm:text-lg py-3.5 px-8 rounded-lg shadow-[0_0_35px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-transform"
+    >
+        GET ACCESS
+        <ArrowRight className="h-5 w-5" />
+    </button>
+</motion.div>
+                     
 
                         </div>
 
@@ -1109,7 +1135,7 @@ const UrgencySection = () => {
                             <img
                                 src="/images/free-book-2.png"
                                 alt="நேரடி விற்பனை எனும் சைட் ஹஸ்ல்"
-                                className="w-full max-w-[230px] lg:max-w-[250px] xl:max-w-[290px] h-auto rounded-lg shadow-2xl"
+                                className="w-full max-w-[210px] lg:max-w-[225px] xl:max-w-[260px] h-auto rounded-lg shadow-2xl"
                             />
                         </motion.div>
 
@@ -1122,6 +1148,7 @@ const UrgencySection = () => {
             {/* =========================================================
                 FREE E-BOOK REGISTRATION POPUP
             ========================================================= */}
+
             {showBookForm && (
                 <div
                     className="fixed inset-0 z-[9999] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4"
@@ -1145,7 +1172,9 @@ const UrgencySection = () => {
 
                         {!submitted ? (
                             <>
+
                                 <div className="text-center mb-6">
+
                                     <h3 className="font-[Outfit] font-extrabold text-black text-2xl sm:text-3xl">
                                         Get Your Free E-Books
                                     </h3>
@@ -1153,6 +1182,7 @@ const UrgencySection = () => {
                                     <p className="mt-2 text-gray-600 font-[Manrope] text-sm sm:text-base">
                                         Enter your details to receive the books.
                                     </p>
+
                                 </div>
 
 
@@ -1229,8 +1259,10 @@ const UrgencySection = () => {
                                     </button>
 
                                 </form>
+
                             </>
                         ) : (
+
                             <div className="text-center py-6">
 
                                 <div className="mx-auto mb-5 h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
@@ -1256,11 +1288,13 @@ const UrgencySection = () => {
                                 </button>
 
                             </div>
+
                         )}
 
                     </div>
                 </div>
             )}
+
         </>
     );
 };
