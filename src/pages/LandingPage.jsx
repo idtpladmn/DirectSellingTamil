@@ -100,17 +100,17 @@ const WorkshopPromotionSection = () => (
                         </motion.p>
 
                         {/* Second Line */}
-                        <motion.p
-                            {...fadeUp}
-                            transition={{ ...fadeUp.transition, delay: 0.2 }}
-                            className="font-[Outfit] font-medium text-[#FF8C00] text-lg sm:text-xl md:text-4xl leading-tight"
-                        >
-                            in the Next 30 Days with {" "}
-                            <span className="text-[#FFFF00] text-xl sm:text-2xl md:text-5xl font-semibold">
-                                “The Bridge”
-                            </span>{" "}
-                            Workshop
-                        </motion.p>
+                       <motion.p
+    {...fadeUp}
+    transition={{ ...fadeUp.transition, delay: 0.1 }}
+    className="font-[Outfit] font-medium text-[#FF8C00] text-[14px] sm:text-xl md:text-4xl leading-tight whitespace-nowrap"
+>
+    in the Next 30 Days with{" "}
+    <span className="text-[#FFFF00] text-[15px] sm:text-2xl md:text-5xl font-semibold">
+        “The Bridge”
+    </span>{" "}
+    Workshop
+</motion.p>
 
                         {/* Third Line */}
                         <motion.p
@@ -127,12 +127,13 @@ const WorkshopPromotionSection = () => (
                         transition={{ ...fadeUp.transition, delay: 0.4 }}
                         className="mt-8 sm:mt-10 inline-flex flex-col items-center justify-center rounded-2xl bg-[#E63946] px-8 py-5 sm:px-12 sm:py-6 shadow-[0_0_40px_rgba(230,57,70,0.25)]"
                     >
-                        <span className="font-[Outfit] font-extrabold text-white text-xl sm:text-2xl md:text-3xl">
-                            Register Now For Just Rs.499/-
-                        </span>
-                        <span className="mt-1 font-[Manrope] font-medium text-white/90 text-sm sm:text-base md:text-lg">
-                            (3 Days / 5 Hours)
-                        </span>
+     <span className="block whitespace-nowrap font-[Outfit] font-extrabold text-[15px] sm:text-2xl md:text-3xl leading-tight">
+    Register Now For Just Rs.499/-
+</span>
+
+<span className="block mt-1 font-[Manrope] font-bold text-[12px] sm:text-base md:text-lg whitespace-nowrap">
+    (3 Days / 5 Hours)
+</span>
                     </motion.div>
 
                     <motion.div
@@ -141,9 +142,9 @@ const WorkshopPromotionSection = () => (
                         className="mt-8 sm:mt-10 font-[Manrope] text-white"
                     >
                         <p className="font-bold text-lg sm:text-xl md:text-2xl">
-                            Next Batch on{" "}
+                            Live Training on{" "}
                             <span className="text-[#FFD700]">
-                                18th / 19th / 20th Sept’26
+                                25th / 26th / 27th Sept’26
                             </span>
                         </p>
 
@@ -167,10 +168,15 @@ const HeroSection = () => (
         <div className="pointer-events-none absolute inset-0">
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#FFD700]/10 blur-[120px]" />
         </div>
+
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,215,0,0.05),_transparent_50%)]" />
 
-        <div className="relative max-w-5xl mx-auto px-6 py-28 sm:py-36 md:py-44 text-center">
-            <motion.div {...fadeUp} className="flex items-center justify-center gap-3">
+        <div className="relative max-w-5xl mx-auto px-6 py-16 sm:py-20 md:py-24 text-center">
+
+            <motion.div
+                {...fadeUp}
+                className="flex items-center justify-center gap-3"
+            >
                 <span className="h-px w-9 bg-[#FFD700]" />
 
                 <span className="font-[Manrope] font-semibold uppercase tracking-[0.25em] text-[#FFD700] text-lg sm:text-xl lg:text-2xl">
@@ -183,18 +189,21 @@ const HeroSection = () => (
             <motion.h1
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: 0.1 }}
-                className="font-[Outfit] font-extrabold tracking-tight text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05]"
+                className="font-[Outfit] font-extrabold tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.05]"
             >
-                We’re  on a Mission to Help{" "}
+                We’re on a Mission to Help{" "}
                 <span className="text-[#FFD700]">1000+ Tamil Direct Sellers</span>{" "}
-                Earn Their <span className="text-[#FFD700]">First Crore</span> &amp; Build a{" "}
-                <span className="text-[#FFD700]">6-Figure Income in Direct Selling Industry</span>
+                Earn Their <span className="text-[#FFD700]" >First Crore</span> &amp; Build a {" "}
+            <span className="text-[#FFD700] whitespace-nowrap">
+    6-Figure Income
+</span>{" "}
+in Direct Selling Industry
             </motion.h1>
 
             <motion.ul
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: 0.2 }}
-                className="mt-12 sm:mt-14 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 sm:gap-5 text-neutral-300 font-[Manrope]"
+                className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 sm:gap-5 text-neutral-300 font-[Manrope]"
             >
                 {[
                     "Without quitting their job",
@@ -214,18 +223,20 @@ const HeroSection = () => (
             <motion.div
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: 0.3 }}
-                className="mt-14 sm:mt-16 flex flex-col items-center gap-5"
+                className="mt-10 sm:mt-12 flex flex-col items-center gap-5"
             >
-                <PrimaryCTA testId="hero-cta-button">Join Now</PrimaryCTA>
+                <PrimaryCTA testId="hero-cta-button">
+                    Join Now
+                </PrimaryCTA>
+
                 <p className="text-sm sm:text-base text-neutral-500 font-[Manrope] flex items-center gap-2">
                     <ShieldCheck className="h-4 w-4 text-[#FFD700]/70" />
-
                 </p>
             </motion.div>
+
         </div>
     </section>
 );
-
 /* ---------------- 2. VIDEO ---------------- */
 const VideoSection = () => (
     <section
@@ -314,13 +325,17 @@ const CorePromiseSection = () => (
         className="bg-[#FAFAFA] py-24 md:py-36"
     >
         <div className="max-w-4xl mx-auto px-6 text-center">
+
             <motion.div {...fadeUp}>
-                <SectionOverline tone="dark">The Core Promise</SectionOverline>
+                <SectionOverline tone="dark">
+                    The Core Promise
+                </SectionOverline>
             </motion.div>
+
             <motion.h2
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: 0.1 }}
-                className="mx-auto w-full max-w-[1450px] font-[Outfit] font-extrabold text-[#0B0B0B] text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl tracking-tight leading-[1.1] text-center px-4"
+                className="mx-auto w-full max-w-full font-[Outfit] font-extrabold text-[#0B0B0B] text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl tracking-tight leading-[1.1] text-center px-4"
             >
 
                 {/* English Heading */}
@@ -340,40 +355,41 @@ const CorePromiseSection = () => (
                 </span>
 
                 <span className="block">
-                    a {" "}
+                    a{" "}
                     <span className="underline decoration-[#FFD700] decoration-4 underline-offset-4">
                         Fast Lane System
                     </span>
                     ,
-                </span>
+   <span className="block whitespace-nowrap transform scale-x-[0.85]">
+    and the{" "}
+    <span className="underline decoration-[#FFD700] decoration-4 underline-offset-4">
+        2D CopyCat Framework
+    </span>
+</span>
 
-                <span className="block lg:whitespace-nowrap">
-                    and the{" "}
-                    <span className="underline decoration-[#FFD700] decoration-4 underline-offset-4">
-                        2D CopyCat Framework
-                    </span>
                 </span>
-
 
 
                 {/* Tamil Translation */}
                 <span
                     className="
-      block
-      mt-5 sm:mt-6
-      font-[Manrope]
-      font-medium
-      text-neutral-500
-      text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl
-      leading-[1.4]
-    "
+                        block
+                        mt-5 sm:mt-6
+                        font-[Manrope]
+                        font-medium
+                        text-neutral-500
+                        text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl
+                        leading-[1.4]
+                    "
                 >
-                    நவீன யுக முறைகளையும், விரைவுப் பாதை அமைப்பு
+                    New Age - முறைகளையும், விரைவுப் பாதை அமைப்பு
                     முறையையும், 2D பிரதியெடுக்கக்கூடிய
                     முறையையும் பயன்படுத்தி வெற்றிகரமான
-                    நேரடி வணிகத்தை கட்டமைங்கள்.
+                    நேரடி வணிகத்தை கட்டமையுங்கள்.
                 </span>
+
             </motion.h2>
+
             <motion.p
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: 0.2 }}
@@ -409,6 +425,7 @@ const CorePromiseSection = () => (
                         key={item.title}
                         className="bg-white border border-black/5 rounded-2xl p-6 sm:p-7 lg:p-8 text-left hover:shadow-xl hover:-translate-y-1 transition-all"
                     >
+
                         {/* Icon */}
                         <div className="h-14 w-14 rounded-xl bg-[#0B0B0B] flex items-center justify-center mb-5 sm:mb-6">
                             <item.icon className="h-6 w-6 text-[#FFD700]" />
@@ -417,15 +434,15 @@ const CorePromiseSection = () => (
                         {/* Heading */}
                         <h3
                             className="
-          font-[Outfit]
-          font-bold
-          text-[#0B0B0B]
-          text-xl
-          sm:text-xl
-          lg:text-2xl
-          leading-tight
-          lg:whitespace-nowrap
-        "
+                                font-[Outfit]
+                                font-bold
+                                text-[#0B0B0B]
+                                text-xl
+                                sm:text-xl
+                                lg:text-2xl
+                                leading-tight
+                                lg:whitespace-nowrap
+                            "
                         >
                             {item.title}
                         </h3>
@@ -433,19 +450,21 @@ const CorePromiseSection = () => (
                         {/* Description */}
                         <p
                             className="
-          text-neutral-600
-          font-[Manrope]
-          text-base
-          sm:text-lg
-          mt-2
-          leading-relaxed
-        "
+                                text-neutral-600
+                                font-[Manrope]
+                                text-base
+                                sm:text-lg
+                                mt-2
+                                leading-relaxed
+                            "
                         >
                             {item.desc}
                         </p>
+
                     </div>
                 ))}
             </motion.div>
+
         </div>
     </section>
 );
@@ -464,14 +483,13 @@ const ProblemSection = () => (
                 <AlertTriangle className="h-12 w-12 text-[#E63946] mx-auto mb-6" />
             </motion.div>
 
-            <motion.h2
-                {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.1 }}
-                className="font-[Outfit] font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15]"
-            >
-                Let me be brutally honest with you...
-            </motion.h2>
-
+           <motion.h2
+    {...fadeUp}
+    transition={{ ...fadeUp.transition, delay: 0.1 }}
+    className="font-[Outfit] font-extrabold text-white text-2xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15]"
+>
+    Let me be brutally honest with you...
+</motion.h2>
             <motion.p
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: 0.2 }}
@@ -497,7 +515,6 @@ const ProblemSection = () => (
         </div>
     </section>
 );
-/* ---------------- 5. PAIN POINTS ---------------- */
 
 /* ---------------- 5. PAIN POINTS ---------------- */
 
@@ -536,7 +553,7 @@ const detailedPainPoints = [
     {
         title: "உங்களை மட்டுமே சார்ந்து இயங்கும் வணிகம்",
         description:
-            "நீங்கள் தொடர்ந்து follow-up செய்தால்தான் sales நடக்கிறது. நீங்கள் motivate செய்யவில்லை என்றால் Team inactive-ஆக மாறுகிறது.No Leverage Income.Only Active Income",
+            "நீங்கள் தொடர்ந்து follow-up செய்தால்தான் sales நடக்கிறது. நீங்கள் motivate செய்யவில்லை என்றால் Team inactive-ஆக மாறுகிறது.No Leverage Income. Only Active Income",
         highlight: "No Leverage Income. Only Active Income.",
         graphLabel: "Team Performance 20%, Leader's Performance 80%",
         value: 80,
@@ -569,9 +586,9 @@ const PainPointsSection = () => (
                 {...fadeUp}
                 className="text-center mb-10 sm:mb-12"
             >
-                <p className="font-[Manrope] text-neutral-500 text-lg sm:text-xl lg:text-2xl leading-relaxed mb-4">
-                    இந்த 7 சவால்களில் எத்தனை உங்களுக்கு இருக்கிறது?
-                </p>
+<p className="font-[Manrope] text-neutral-600 text-[13px] sm:text-xl lg:text-2xl leading-relaxed mb-4 text-center whitespace-nowrap">
+    இந்த 7 சவால்களில் எத்தனை உங்களுக்கு இருக்கிறது?
+</p>
 
                 <h2 className="font-[Outfit] font-extrabold text-[#0B0B0B] text-2xl sm:text-3xl lg:text-4xl leading-tight">
                     <span className="block">
@@ -875,7 +892,7 @@ const AuthoritySection = () => (
                     </p>
 
                     <p className="text-justify [text-align-last:left]">
-                        இவருடைய Direct Selling வணிகமும் பயிற்சி அமைப்பும் இந்தியாவின் 14 மாநிலங்களிலும், 5 நாடுகளிலும் விரிவடைந்துள்ளன.
+                        இவருடைய Direct Selling வணிகமும் பயிற்சி அமைப்பும் இந்தியாவின் 10 மாநிலங்களிலும், 5 நாடுகளிலும் விரிவடைந்துள்ளன.
                     </p>
 
                     <p className="text-justify [text-align-last:left]">
@@ -901,7 +918,7 @@ const AuthoritySection = () => (
                 <div className="mt-8 grid grid-cols-3 gap-3 max-w-md">
                     {[
                         { n: "1 Lakh+", l: "People Trained" },
-                        { n: "14+", l: "Indian States" },
+                        { n: "10+", l: "Indian States" },
                         { n: "22+", l: "Years Experience" },
                     ].map((s) => (
                         <div
@@ -925,6 +942,7 @@ const AuthoritySection = () => (
 /* ---------------- 10. URGENCY ---------------- */
 
 const UrgencySection = () => {
+
     const [showBookForm, setShowBookForm] = React.useState(false);
 
     const [formData, setFormData] = React.useState({
@@ -1003,9 +1021,11 @@ const UrgencySection = () => {
                     {/* =====================================================
                         BOOK 1 | CENTER CONTENT | BOOK 2
                     ===================================================== */}
+
                     <div className="grid grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)_240px] xl:grid-cols-[270px_minmax(0,1fr)_270px] gap-6 xl:gap-10 items-center">
 
                         {/* ================= LEFT BOOK ================= */}
+
                         <motion.div
                             {...fadeUp}
                             transition={{
@@ -1023,107 +1043,99 @@ const UrgencySection = () => {
 
 
                         {/* ================= CENTER ================= */}
+
                         <div className="text-center order-2">
 
-                            {/* E-Book */}
+                          
+
+                            {/* FREE BONUS E-BOOK */}
+                            <motion.h2
+                                {...fadeUp}
+                                transition={{
+                                    ...fadeUp.transition,
+                                    delay: 0.1,
+                                }}
+                                className="font-[Outfit] font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl xl:text-5xl tracking-tight leading-tight"
+                            >
+                                FREE BONUS E-BOOK
+                            </motion.h2>
+
+
+                            {/* Main Offer */}
+                            <motion.p
+                                {...fadeUp}
+                                transition={{
+                                    ...fadeUp.transition,
+                                    delay: 0.15,
+                                }}
+                                className="mt-3 font-[Outfit] font-bold text-white text-lg sm:text-xl md:text-2xl leading-tight"
+                            >
+                                Register for the Training &amp; Get Your E-book FREE
+                            </motion.p>
+                       
+
+                            {/* REGISTER NOW BUTTON */}
                             <motion.div
                                 {...fadeUp}
-                                className="inline-flex items-center gap-2 bg-black/90 text-white rounded-full px-5 py-2 text-xs sm:text-sm font-bold tracking-[0.15em] uppercase mb-5"
+                                transition={{
+                                    ...fadeUp.transition,
+                                    delay: 0.4,
+                                }}
+                                className="mt-6 flex justify-center"
                             >
-                                <Clock className="h-3.5 w-3.5 text-[#FFD700]" />
-                                E-BOOK
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setShowBookForm(true);
+                                        setSubmitted(false);
+                                    }}
+                                    data-testid="urgency-cta-button"
+                                    className="w-full max-w-[520px] bg-[#FFD700] text-black rounded-xl px-6 py-4 sm:py-5 shadow-[0_0_35px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-transform"
+                                >
+                                    <span className="block font-[Outfit] font-extrabold text-xl sm:text-2xl md:text-3xl leading-tight">
+                                        Register Now For Just Rs.499/-
+                                    </span>
+
+                                    <span className="block mt-1 font-[Manrope] font-bold text-sm sm:text-base md:text-lg">
+                                        (3 Days / 5 Hours)
+                                    </span>
+                                </button>
                             </motion.div>
 
 
-                            {/* Get Your Free E-Books */}
-                           {/* Claim Your E-Books */}
-<motion.h2
-    {...fadeUp}
-    transition={{
-        ...fadeUp.transition,
-        delay: 0.1,
-    }}
-    className="font-[Outfit] font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl xl:text-5xl tracking-tight leading-tight"
->
-    Claim Your E-Books
-</motion.h2>
+                            {/* Training Date */}
+                            <motion.p
+                                {...fadeUp}
+                                transition={{
+                                    ...fadeUp.transition,
+                                    delay: 0.5,
+                                }}
+                                className="mt-5 font-[Outfit] font-extrabold text-white text-base sm:text-lg md:text-xl"
+                            >
+                                LIVE TRAINING{" "}
+                                <span className="text-[#FFD700]">
+                                    on 25th / 26th / 27th Sept'26
+                                </span>
+                            </motion.p>
 
 
-{/* E-Book Value */}
-<motion.div
-    {...fadeUp}
-    transition={{
-        ...fadeUp.transition,
-        delay: 0.2,
-    }}
-    className="mt-4 flex items-center justify-center gap-3 font-[Manrope] font-bold"
->
-    <span className="text-white text-lg sm:text-xl md:text-2xl">
-        E-Book Value
-    </span>
-
-    {/* ₹299 with X cancellation mark */}
-    <span className="relative inline-flex items-center justify-center text-[#FFD700] font-extrabold text-2xl sm:text-3xl md:text-4xl px-1">
-        ₹299
-
-        <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <span className="absolute w-[35%] h-[4px] bg-black rounded-full rotate-45" />
-            <span className="absolute w-[35%] h-[4px] bg-black rounded-full -rotate-45" />
-        </span>
-    </span>
-
-    <span className="text-white font-bold text-xl sm:text-2xl md:text-3xl">
-        →
-    </span>
-
-    <span className="text-[#FFD700] font-extrabold text-2xl sm:text-3xl md:text-4xl">
-        FREE
-    </span>
-</motion.div>
-
-
-{/* Description */}
-<motion.p
-    {...fadeUp}
-    transition={{
-        ...fadeUp.transition,
-        delay: 0.3,
-    }}
-    className="mt-6 text-white/95 font-[Manrope] text-[11px] sm:text-base md:text-xl font-medium leading-relaxed text-center whitespace-nowrap"
->
-    உங்கள் பெயர் மற்றும் WhatsApp எண்ணை பதிவு செய்யுங்கள்.
-    <br />
-    இந்த Exclusive E-Books உங்கள் WhatsApp-க்கு அனுப்பப்படும்.
-</motion.p>
-
-{/* Get Access Button */}
-<motion.div
-    {...fadeUp}
-    transition={{
-        ...fadeUp.transition,
-        delay: 0.4,
-    }}
-    className="mt-7"
->
-    <button
-        type="button"
-        onClick={() => {
-            setShowBookForm(true);
-            setSubmitted(false);
-        }}
-        data-testid="urgency-cta-button"
-        className="w-full max-w-[520px] inline-flex items-center justify-center gap-2 bg-[#FFD700] text-black font-extrabold text-base sm:text-lg py-3.5 px-8 rounded-lg shadow-[0_0_35px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-transform"
-    >
-        GET ACCESS
-        <ArrowRight className="h-5 w-5" />
-    </button>
-</motion.div>
-                     
+                            {/* Training Time */}
+                            <motion.p
+                                {...fadeUp}
+                                transition={{
+                                    ...fadeUp.transition,
+                                    delay: 0.6,
+                                }}
+                                className="mt-1 font-[Manrope] font-bold text-white text-sm sm:text-base md:text-lg"
+                            >
+                                Time — 5:00 AM to 6:30 AM
+                            </motion.p>
 
                         </div>
 
 
                         {/* ================= RIGHT BOOK ================= */}
+
                         <motion.div
                             {...fadeUp}
                             transition={{
@@ -1154,6 +1166,7 @@ const UrgencySection = () => {
                     className="fixed inset-0 z-[9999] bg-black/75 backdrop-blur-sm flex items-center justify-center p-4"
                     onClick={() => setShowBookForm(false)}
                 >
+
                     <div
                         className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 sm:p-8"
                         onClick={(e) => e.stopPropagation()}
@@ -1175,13 +1188,12 @@ const UrgencySection = () => {
 
                                 <div className="text-center mb-6">
 
-                                    <h3 className="font-[Outfit] font-extrabold text-black text-2xl sm:text-3xl">
-                                        Get Your Free E-Books
-                                    </h3>
-
-                                    <p className="mt-2 text-gray-600 font-[Manrope] text-sm sm:text-base">
-                                        Enter your details to receive the books.
-                                    </p>
+                                   <h3 className="font-[Outfit] font-extrabold text-black text-xl sm:text-2xl leading-tight text-center">
+    Register for The Bridge Workshop
+</h3>
+<p className="mt-3 text-gray-600 font-[Manrope] text-xs sm:text-sm leading-tight text-center">
+    Register for the ₹ 499 Training and Get Your E-Books FREE
+</p>
 
                                 </div>
 
@@ -1254,8 +1266,8 @@ const UrgencySection = () => {
                                         className="w-full mt-2 inline-flex items-center justify-center gap-2 bg-black text-[#FFD700] font-extrabold text-base sm:text-lg py-4 px-6 rounded-lg hover:scale-[1.02] transition-transform disabled:opacity-60 disabled:hover:scale-100"
                                     >
                                         {submitting
-                                            ? "Submitting..."
-                                            : "GET MY FREE E-BOOKS"}
+    ? "Registering..."
+    : "REGISTER FOR THE TRAINING →"}
                                     </button>
 
                                 </form>
@@ -1263,31 +1275,49 @@ const UrgencySection = () => {
                             </>
                         ) : (
 
-                            <div className="text-center py-6">
+    <div className="text-center py-6">
 
-                                <div className="mx-auto mb-5 h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
-                                    <span className="text-green-600 text-3xl">
-                                        ✓
-                                    </span>
-                                </div>
+    {/* Success Icon */}
+    <div className="mx-auto mb-5 h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
+        <span className="text-green-600 text-3xl">
+            ✓
+        </span>
+    </div>
 
-                                <h3 className="font-[Outfit] font-extrabold text-black text-2xl sm:text-3xl">
-                                    Registration Successful!
-                                </h3>
+    {/* Success Heading */}
+    <h3 className="font-[Outfit] font-extrabold text-black text-xl sm:text-2xl leading-tight whitespace-nowrap">
+        Training Registration Successful!
+    </h3>
 
-                                <p className="mt-3 text-gray-600 font-[Manrope]">
-                                    Thank you for registering for the free e-books.
-                                </p>
+    {/* Confirmation */}
+    <p className="mt-3 text-gray-600 font-[Manrope] text-xs sm:text-sm leading-tight whitespace-nowrap">
+        You have successfully registered for The Bridge Workshop.
+    </p>
 
-                                <button
-                                    type="button"
-                                    onClick={() => setShowBookForm(false)}
-                                    className="mt-6 bg-black text-[#FFD700] font-bold px-6 py-3 rounded-lg"
-                                >
-                                    Close
-                                </button>
+    {/* Free E-Book Bonus */}
+    <div className="mt-5 bg-[#FFF8D6] border border-[#FFD700]/40 rounded-xl px-3 py-4">
 
-                            </div>
+        <p className="font-[Outfit] font-extrabold text-black text-base sm:text-lg leading-tight whitespace-nowrap">
+            🎁 FREE E-BOOK BONUS
+        </p>
+
+        <p className="mt-2 text-gray-700 font-[Manrope] text-xs sm:text-sm leading-tight whitespace-nowrap">
+            Your FREE E-Books will be sent to your WhatsApp number.
+        </p>
+
+    </div>
+
+    {/* Close */}
+    <button
+        type="button"
+        onClick={() => setShowBookForm(false)}
+        className="mt-6 bg-black text-[#FFD700] font-bold px-7 py-3 rounded-lg hover:scale-[1.02] transition-transform"
+    >
+        CLOSE
+    </button>
+
+</div>
+
 
                         )}
 
